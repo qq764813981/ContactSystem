@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="shortcut icon" href="images/favicon/favicon.png" type="image/x-icon">
+    <link rel="icon" href="images/favicon/favicon.png" type="image/x-icon">
+
+    <title>高三一班通讯录</title>
+
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+    <!--Library Styles-->    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/lib/font-awesome.css" rel="stylesheet">
+    <link href="css/lib/nivo-lightbox.css" rel="stylesheet">
+    <link href="css/lib/nivo-themes/default/default.css" rel="stylesheet">
+
+
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=QXwuA2Zi8h3huVQvqVrW2MhU"></script>
+	
+    <!--Template Styles-->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/scheme/purple.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body data-spy="scroll">
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="status"></div>
+    </div>
+	
+    <div id="main-wrapper">
+        
+        <!-- Site Navigation -->
+        <div id="menu">
+            <nav class="navbar navbar-default" role="navigation">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html#">
+                        <img src="images/logo.png" alt="logo">
+                    </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-navbar-collapse">
+                    <ul class="nav navbar-nav">
+
+                        <li class="active"><a class="sscroll" href="index.html#home">主页</a></li>
+						
+						<!--
+						
+                        <li><a class="sscroll" href="index.html#services">Services</a></li>
+						
+						-->
+						
+                        <li><a class="sscroll" href="index.html#portfolio">照片墙</a></li>
+						
+
+						
+                        <li><a class="sscroll" href="index.html#about">通讯录</a></li>
+
+
+                        <li><a class="sscroll" href="index.html#testimonial">修改通讯信息</a></li>
+
+						
+                        <li><a class="sscroll" href="index.html#clients">通讯地图</a></li>
+
+						
+                        <li><a class="sscroll" href="index.html#blog-front">留言板</a></li>
+                        <li><a class="sscroll" href="index.html#contact">技术支持</a></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </nav>
+        </div>
+        
+        <div id="container">
+            <!-- BEGIN HOME -->
+            <section id="home" class="home">
+                <!-- Superslides -->
+                <div id="home-slide">
+                    <ul class="slides-container text-center">
+                        <li>
+                            <div class="slide-text">
+                                <h2>那年夏天</h2>
+                                <span>很多年后，我们把这个夏天叫做“那年夏天”，但是那年夏天，我们曾笑得很美，很绚烂。</span>
+                                <br/>
+                            </div>
+                          <div class="slide-filter"></div>
+                            <img src="images/slider/slide-1.jpg" class="par" alt="first">
+                        </li>
+                        <li>
+                            <div class="slide-text">
+                                <h2>有你有我</h2>
+                                <span>不管未来有多长久，请记住成长的路上有你有我；不管经历多少个春夏秋冬，请铭记共度的青春年华。亲爱的朋友，愿你绽放最绚丽的笑容，给明天画出最美丽的梦。</span>
+                                <br/>
+                            </div>
+                          <div class="slide-filter"></div>
+                            <img src="images/slider/slide-2.jpg" class="par" alt="first">
+                        </li>
+                        <li>
+                            <div class="slide-text">
+                                <h2>似水年华</h2>
+                                <span>离开不是离别，是启航，是去追寻我们美丽的梦想！哪怕眼含不舍，我们也要笑着上路。多年以后，当我们再回首，一定还会记得，那初夏的雨中，也曾有你我的笑脸，那和煦的阳光下，也曾映照着你我如水的年华！</span>
+                                <br/>
+                            </div>
+                          <div class="slide-filter"></div>
+                            <img src="images/slider/slide-3.jpg" class="par" alt="first">
+                        </li>
+                    </ul>
+                    <nav class="slides-navigation slidez">
+                        <a href="javascript:;" class="next">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                        <a href="javascript:;" class="prev">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                    </nav>
+                </div>
+                <!-- End of Superslide -->
+            </section>
+            <!-- END HOME -->
+            
+            <!-- BEGIN SERVICES -->
+			
+			<!--
+            <section id="services" class="services">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="header-content">
+                            <h2>Services</h2>
+                            <h3>This is what we are good at</h3>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="service">
+                                    <div class="icon-holder">
+                                        <i class="fa fa-paper-plane"></i>
+                                    </div>
+                                    <h3 class="heading">Web Design</h3>
+                                    <p class="description">A elementum ligula lacus ac quam ultrices a scelerisque praesent vel suspendisse scelerisque a aenean hac montes.</p>
+				</div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="service">
+                                    <div class="icon-holder">
+                                        <i class="fa fa-diamond"></i>
+                                    </div>
+                                    <h3 class="heading">Web Programming</h3>
+                                    <p class="description">A elementum ligula lacus ac quam ultrices a scelerisque praesent vel suspendisse scelerisque a aenean hac montes.</p>
+				</div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="service">
+                                    <div class="icon-holder">
+                                        <i class="fa fa-camera"></i>
+                                    </div>
+                                    <h3 class="heading">Branding</h3>
+                                    <p class="description">A elementum ligula lacus ac quam ultrices a scelerisque praesent vel suspendisse scelerisque a aenean hac montes.</p>
+				</div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="service">
+                                    <div class="icon-holder">
+                                        <i class="fa fa-heartbeat"></i>
+                                    </div>
+                                    <h3 class="heading">Consultation</h3>
+                                    <p class="description">A elementum ligula lacus ac quam ultrices a scelerisque praesent vel suspendisse scelerisque a aenean hac montes.</p>
+				</div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="service">
+                                    <div class="icon-holder">
+                                        <i class="fa fa-life-ring"></i>
+                                    </div>
+                                    <h3 class="heading">Technical Writing</h3>
+                                    <p class="description">A elementum ligula lacus ac quam ultrices a scelerisque praesent vel suspendisse scelerisque a aenean hac montes.</p>
+				</div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="service">
+                                    <div class="icon-holder">
+                                        <i class="fa fa-rocket"></i>
+                                    </div>
+                                    <h3 class="heading">Bug Hunt</h3>
+                                    <p class="description">A elementum ligula lacus ac quam ultrices a scelerisque praesent vel suspendisse scelerisque a aenean hac montes.</p>
+				</div>
+                            </div>
+                        </div>
+                    </div>                   
+                </div>
+            </section>
+			
+			
+			-->
+			
+            <!-- END SERVICES -->
+     
+            <!-- BEGIN PORTFOLIO -->
+            <section id="portfolio" class="portfolio gray">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="header-content">
+                            <h2>照片墙</h2>
+                            <h5>有一段时光，有一群笑脸，永生难忘</h5>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-12">
+                        <ul class="portfolioFilter text-center">
+                            <li data-filter="websites">早春</li>
+                            <li data-filter="illustrations">盛夏</li>
+                            <li data-filter="photo">晚秋</li>
+                            <li data-filter="all">暖冬</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-12 mg-bt-80">
+                        <div class="row portfolioContainer  text-center">
+                            <div class="col-md-4 col-xs-6 portfolio-item websites">
+                                <a class="popup" href="images/portfolio/portfolio-thumb-1.jpg" data-lightbox-gallery="team-portfolio">
+                                    <span class="project-hover">
+                                        <span>Designing UI/UX
+                                        </span>
+                                    </span>
+                                    <img src="images/portfolio/portfolio-thumb-1.jpg" alt="portfolio-thumb-1">
+                                </a>
+                            </div>
+
+                            <div class="col-md-4 col-xs-6 portfolio-item illustrations">
+                                <a class="popup" href="images/portfolio/portfolio-thumb-5.jpg" data-lightbox-gallery="team-portfolio">
+                                    <span class="project-hover">
+                                        <span>Designing Apps
+                                        </span>
+                                    </span>
+                                    <img src="images/portfolio/portfolio-thumb-5.jpg" alt="portfolio-thumb-5">
+                                </a>
+                            </div>
+                            <div class="col-md-4 col-xs-6 portfolio-item websites">
+                                <a class="popup" href="images/portfolio/portfolio-thumb-3.jpg" title="Image with title"  data-lightbox-gallery="team-portfolio">
+                                    <span class="project-hover">
+                                        <span>Branding Identity
+                                        </span>
+                                    </span>
+                                    <img src="images/portfolio/portfolio-thumb-3.jpg" alt="portfolio-thumb-3">
+                                </a>
+                            </div>
+                            <div class="col-md-4 col-xs-6 portfolio-item photo">
+                                <a class="popup" href="images/portfolio/portfolio-thumb-4.jpg" data-lightbox-gallery="team-portfolio">
+                                    <span class="project-hover">
+                                        <span>Photography
+                                        </span>
+                                    </span>
+                                    <img src="images/portfolio/portfolio-thumb-4.jpg" alt="portfolio-thumb-4">
+                                </a>
+                            </div>
+                            <div class="col-md-4 col-xs-6 portfolio-item websites">
+                                <a class="popup" href="images/portfolio/portfolio-thumb-2.jpg" data-lightbox-gallery="team-portfolio">
+                                    <span class="project-hover">
+                                        <span>Website Design
+                                        </span>
+                                    </span>
+                                    <img src="images/portfolio/portfolio-thumb-2.jpg" alt="portfolio-thumb-2">
+                                </a>
+                            </div>
+                            <div class="col-md-4 col-xs-6 portfolio-item illustrations">
+                                <a class="popup" href="images/portfolio/portfolio-thumb-6.jpg" data-lightbox-gallery="team-portfolio">
+                                    <span class="project-hover">
+                                        <span>Branding Illustration
+                                        </span>
+                                    </span>
+                                    <img src="images/portfolio/portfolio-thumb-6.jpg" alt="portfolio-thumb-6">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- END PORTFOLIO -->
+
+            <!-- BEGIN TEAM -->
+            <section id="about" class="about gray">
+               
+			   <div class="row">
+                    <div class="col-md-12 mg-bt-80">
+                        <div class="header-content">
+                            <h2>通讯录</h2>
+                            <h5>距离再远，也不要忘了联系</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="row mg-bt-40">
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="teams">
+                                    <div class="pict">
+                                        <img src="images/team/01.jpg" alt="Team 1">
+                                    </div>
+                                    <div class="desc">
+                                        <h3>熊嘉</h3>
+                                        <span>15070872014</span>
+                                        <div class="social">
+                                          <h5>录取院校：中国传媒大学</h5>										  
+						                  <h5>录取专业：传播学</h5>										  
+								          <h5>所在城市：北京</h5>										  
+										
+                                        </div>
+                                    </div>
+
+                                </div>
+                          </div>
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="teams">
+                                    <div class="pict">
+                                        <img src="images/team/02.jpg" alt="Team 1">
+                                    </div>
+                                    <div class="desc">
+                                        <h3>熊嘉</h3>
+                                        <span>15070872014</span>
+                                        <div class="social">
+                                          <h5>录取院校：中国传媒大学</h5>										  
+						                  <h5>录取专业：传播学</h5>										  
+								          <h5>所在城市：北京</h5>										  
+										
+                                        </div>
+                                    </div>
+
+                                </div>
+                          </div>
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="teams">
+                                    <div class="pict">
+                                        <img src="images/team/03.jpg" alt="Team 1">
+                                    </div>
+                                    <div class="desc">
+                                        <h3>熊嘉</h3>
+                                        <span>15070872014</span>
+                                        <div class="social">
+                                          <h5>录取院校：中国传媒大学</h5>										  
+						                  <h5>录取专业：传播学</h5>										  
+								          <h5>所在城市：北京</h5>										  
+										
+                                        </div>
+                                    </div>
+
+                                </div>
+                          </div>
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="teams">
+                                    <div class="pict">
+                                        <img src="images/team/04.jpg" alt="Team 1">
+                                    </div>
+                                    <div class="desc">
+                                        <h3>熊嘉</h3>
+                                        <span>15070872014</span>
+                                        <div class="social">
+                                          <h5>录取院校：中国传媒大学</h5>										  
+						                  <h5>录取专业：传播学</h5>										  
+								          <h5>所在城市：北京</h5>										  
+										
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="pagination">
+                    <li><a href="#">&laquo;</a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">6</a></li>
+                    <li><a href="#">7</a></li>
+                    <li><a href="#">8</a></li>
+                    <li><a href="#">9</a></li>
+                    <li><a href="#">10</a></li>
+                    <li><a href="#">&raquo;</a></li>
+                </ul><br>
+
+
+				
+            </section>
+            <!-- END TEAM -->
+
+
+            <!-- BEGIN TESTIMONIAL -->
+
+
+
+            <section id="testimonial" class="testimonial">
+
+                <div class="row">
+                    <div class="col-md-12 mg-bt-80">
+                        <div class="header-content">
+                            <h2>修改通讯信息</h2>
+                            <h3>发送新的手机号给后台修改</h3>
+                        </div>
+                    </div>
+
+                    <form id="contactform" role="form">
+                        <div class="col-md-3">
+
+                        </div>
+
+                        <div class="col-md-4">
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="name" placeholder="请输入新的手机号">
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-3">
+
+                            <button type="submit" class="btn">确定修改</button>
+
+                        </div>
+
+                        <div class="col-md-2">
+
+                        </div>
+
+
+                    </form>
+
+
+                </div>
+
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+
+            </section>
+
+
+            <!-- END TESTIMONIAL -->
+
+
+            <!-- BEGIN CLIENTS -->
+			
+
+            <section id="clients" class="clients">
+                <div class="row">
+                    <div class="col-md-12 mg-bt-80">
+                        <div class="header-content">
+                            <h2>通讯地图</h2>
+                            <h5>滚动拖拽鼠标操作地图</h5>
+                        </div>
+                    </div>                    
+                    <div class="col-lg-12">
+                        <div class="row mg-bt-60">
+                            <div class="col-md-12">
+
+
+                                <div id="allmap" style="height:580px;width: 100%"></div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+			
+
+            <!-- END CLIENTS -->
+
+            <!-- BEGIN BLOG -->
+            <section id="blog-front" class="blog-front gray">
+                <div class="row">
+                    <div class="col-md-12 mg-bt-70">
+                        <div class="header-content">
+                            <h2>留言板</h2>
+                            <h5>有一些话，直到告别后，也遗憾的没有说出来</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <form id="contactform1" role="form">
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <textarea class="form-control" id="s_message" rows="10" placeholder="说点什么吧..."></textarea>
+                        </div>
+                    </div>
+
+                </div>
+
+                    <br>
+
+                    <div class="row">
+
+                        <div class="col-md-10">
+
+                        </div>
+
+                        <div class="col-md-2">
+
+                            <button type="submit" class="btn">提交留言</button>
+                        </div>
+
+                    </div>
+
+                </form>
+
+                <br>
+                <br><br><br>
+                <div class="col-md-12 mg-bt-70">
+                    <div class="header-content">
+                        <h3>留言列表</h3>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <article class="col-md-4 col-sm-6">
+                        <figure class="blog-thumb">
+                            <img src="images/blog/blog-1.jpg" alt="blog-thumb">
+                        </figure>
+                        <div class="post-area">
+                            <a class="post-cat" href="">
+                            <h4>留言人姓名1</h4>
+                            </a>
+                            <a class="post-title" href="blog-post.html">
+                                <h3>时间1</h3>
+                            </a>
+                            <p class="post-content"> 一曲高歌和着蝉鸣而落，一段道路并着泪水而尽，一对书桌迎着热浪而离，一段故事却不会随着分别而终。未来无绝期，务必常联系。</p>                            
+                        </div>
+                    </article>
+
+                    <article class="col-md-4 col-sm-6">
+                        <figure class="blog-thumb">
+                            <img src="images/blog/blog-2.jpg" alt="blog-thumb">
+                        </figure>
+                        <div class="post-area">
+                            <a class="post-cat" href="">
+                            <h4>姓名2</h4>
+                            </a>
+                            <a class="post-title" href="blog-post.html">
+                                <h3>时间2</h3>
+                            </a>
+                            <p class="post-content"> 告别林荫校园，扬帆起航，展开拼搏的篇章；告别书声琅琅，豪情万丈，追逐心中的梦想；告别昔日同窗，情谊绵长，寄语真情的愿望。毕业之际，愿你怀着憧憬，迈向成功的方向！</p>
+                        </div>
+                    </article>
+
+                    <article class="col-md-4 col-sm-6">
+                        <figure class="blog-thumb">
+                            <img src="images/blog/blog-3.jpg" alt="blog-thumb">
+                        </figure>
+                        <div class="post-area">
+                            <a class="post-cat" href="">
+                            <h4>姓名3</h4>
+                            </a>
+                            <a class="post-title" href="blog-post.html">
+                                <h3>时间3</h3>
+                            </a>
+                            <p class="post-content"> 曾经以为，梦想最大，远方最美。现在感到，珍惜拥有，爱在身边。嗨，哥们，珍惜现在，珍惜拥有，祝好运连连快乐开心每一天！</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+
+                        <ul class="pagination">
+                            <li><a href="#">&laquo;</a></li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#">6</a></li>
+                            <li><a href="#">7</a></li>
+                            <li><a href="#">8</a></li>
+                            <li><a href="#">9</a></li>
+                            <li><a href="#">10</a></li>
+                            <li><a href="#">&raquo;</a></li>
+                        </ul><br>
+
+                        <!--
+
+                            <a class="btn blog-btn" href="blog.html">See what else is going on...</a>
+                        -->
+					
+					</div>
+                </div>
+            </section>
+            <!-- END BLOG -->
+            
+            <!-- BEGIN SUBSCRIPTION -->
+			
+			<!--
+			
+            <section class="subscribe text-center">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>Stay Tuned by subscribing to our Newsletter.</h3>
+                        <p>We will not share your email.</p>
+
+                        <form role="form">
+                            <input type="text" class="form-control placeholder" placeholder="Enter Your Email">
+                            <button class="btn" type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </div>                
+            </section>
+			
+			-->
+            <!-- END SUBSCRIPTION -->
+            
+            <!-- BEGIN CTA -->
+			
+			<!--
+            <section class="cta text-center">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>Purchase Team Pro and Get Access To</h3>
+                        <p>6 Pre-built color scheme, less, php enabled contact form, slider and parallax home and Pro SUPPORT</p>
+                        <a href="http://www.cssmoban.com//download/team-creative-business-portfolio-template/" class="btn">Purchase Now</a>                        
+                    </div>
+                </div>                
+            </section>
+			
+			-->
+            <!-- END CTA -->
+
+            <!-- BEGIN CONTACT -->
+            <section id="contact" class="contact gray">
+                <div class="row">
+                    <div class="col-md-12 mg-bt-80">
+                        <div class="header-content">
+                            <h2>发送建议</h2>
+                            <h5>请您把好的建议发给我们，我们会在最短的时间内给你回复</h5>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6">
+                        <div class="address">
+                            <h2>和我们联系</h2>
+                            
+							<h2>我们的办公室</h2>
+                            <ul class="office">
+                                <li><i class="fa fa-map-marker"></i> <strong>Address:</strong> 江西-南昌市-南昌大学-窗星工作室</li>
+                                <li><i class="fa fa-phone"></i> <strong>Phone:</strong> 8888-8888</li>
+                                <li><i class="fa fa-envelope"></i> <strong>Email:</strong> <a href="mailto:mail@example.com">000000000@aliyun.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6">
+                        <form id="contact-form" role="form">                            
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="c_name" placeholder="名字">
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="c_email" placeholder="邮箱">                                
+                            </div>
+                            
+                            <div class="form-group">
+                                <textarea class="form-control" id="c_message" rows="10" placeholder="信息"></textarea>
+                            </div>
+                            <br/>
+                            <button type="submit" class="btn">发送信息</button>
+                            <div class="ajax-response"></div>
+                        </form>
+                    </div>
+                    
+                </div>
+            </section>
+            <!-- END CONTACT -->
+            <!-- BEGIN FOOTER -->
+            <footer>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="social">
+                            <a href="javascript:;"><i class="fa fa-facebook"></i></a>
+                            <a href="javascript:;"><i class="fa fa-twitter"></i></a>
+                            <a href="javascript:;"><i class="fa fa-pinterest"></i></a>
+                            <a href="javascript:;"><i class="fa fa-dribbble"></i></a>
+                </div>
+                                           
+                    </div>
+                </div>
+            </footer>
+            <!-- END FOOTER -->
+        </div>
+    </div>
+
+
+    <!-- Back to top -->
+    <div id="backtotop">       
+        <a class="to-top-btn sscroll" href="index.html#home"><i class="fa fa-angle-double-up"></i></a>
+    </div>
+
+
+    <!-- Library Scripts -->
+	
+
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/lib/jquery.preloader.js"></script>
+    <script src="js/lib/nivo-lightbox.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/lib/jquery.superslides.min.js"></script>
+    <script src="js/lib/smoothscroll.js"></script>
+    <script src="js/lib/jquery.sudoslider.min.js"></script>
+    <script src="js/lib/jquery.bxslider.min.js"></script>
+    <script src="js/lib/jquery.mixitup.min.js"></script>
+    <script src="js/lib/jquery.backtotop.js"></script>
+    <script src="js/lib/jquery.carouFredSel-6.2.1-packed.js"></script>
+    <script src="js/lib/retina.min.js"></script>
+
+    <!-- Custom Script -->    
+    <script src="js/main.js"></script>
+</body>
+
+</html>
+
+<script type="text/javascript">
+
+    // 百度地图API功能
+    var map = new BMap.Map("allmap");
+
+    map.centerAndZoom(new BMap.Point(113.331398,39.897445),5);
+
+    map.enableScrollWheelZoom(true);
+
+</script>
