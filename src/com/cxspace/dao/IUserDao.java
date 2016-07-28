@@ -16,5 +16,4 @@ public interface IUserDao {
     //登录逻辑，通过手机号和密码查询用户是否存在
     public User find(String phone , String password);
 
-
 }
