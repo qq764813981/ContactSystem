@@ -1,3 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
@@ -6,8 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <link rel="shortcut icon" href="images/favicon/favicon.png" type="image/x-icon">
-    <link rel="icon" href="images/favicon/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/front/images/favicon/favicon.png" type="image/x-icon">
+    <link rel="icon" href="${pageContext.request.contextPath}/front/images/favicon/favicon.png" type="image/x-icon">
 
     <title>高三一班通讯录</title>
 
@@ -16,21 +19,21 @@
     <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 
     <!--Library Styles-->    
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/lib/font-awesome.css" rel="stylesheet">
-    <link href="css/lib/nivo-lightbox.css" rel="stylesheet">
-    <link href="css/lib/nivo-themes/default/default.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/front/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/front/css/lib/font-awesome.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/front/css/lib/nivo-lightbox.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/front/css/lib/nivo-themes/default/default.css" rel="stylesheet">
 
 
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=QXwuA2Zi8h3huVQvqVrW2MhU"></script>
 	
     <!--Template Styles-->
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/scheme/purple.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/front/css/style.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/front/css/scheme/purple.css" rel="stylesheet">
 
     <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
+      <script src="/front/js/html5shiv.js"></script>
+      <script src="/front/js/respond.min.js"></script>
     <![endif]-->
 </head>
 
@@ -54,8 +57,8 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html#">
-                        <img src="images/logo.png" alt="logo">
+                    <a class="navbar-brand" href="index.jsp#">
+                        <img src="${pageContext.request.contextPath}/front/images/logo.png" alt="logo">
                     </a>
                 </div>
 
@@ -63,29 +66,28 @@
                 <div class="collapse navbar-collapse" id="bs-navbar-collapse">
                     <ul class="nav navbar-nav">
 
-                        <li class="active"><a class="sscroll" href="index.html#home">主页</a></li>
+                        <li class="active"><a class="sscroll" href="${pageContext.request.contextPath}/front/index.jsp#home">主页</a></li>
 						
 						<!--
 						
-                        <li><a class="sscroll" href="index.html#services">Services</a></li>
+                        <li><a class="sscroll" href="index.jsp#services">Services</a></li>
 						
 						-->
 						
-                        <li><a class="sscroll" href="index.html#portfolio">照片墙</a></li>
+                        <li><a class="sscroll" href="${pageContext.request.contextPath}/front/index.jsp#portfolio">照片墙</a></li>
 						
 
-						
-                        <li><a class="sscroll" href="index.html#about">通讯录</a></li>
+                        <li><a  href="${pageContext.request.contextPath}/PageContactServlet">通讯录</a></li>
 
 
-                        <li><a class="sscroll" href="index.html#testimonial">修改通讯信息</a></li>
-
-						
-                        <li><a class="sscroll" href="index.html#clients">通讯地图</a></li>
+                        <li><a class="sscroll" href="${pageContext.request.contextPath}/front/index.jsp#testimonial">修改通讯信息</a></li>
 
 						
-                        <li><a class="sscroll" href="index.html#blog-front">留言板</a></li>
-                        <li><a class="sscroll" href="index.html#contact">技术支持</a></li>
+                        <li><a class="sscroll" href="${pageContext.request.contextPath}/front/index.jsp#clients">通讯地图</a></li>
+
+						
+                        <li><a  href="${pageContext.request.contextPath}/PageMessageServlet">留言板</a></li>
+                        <li><a class="sscroll" href="${pageContext.request.contextPath}/front/index.jsp#contact">技术支持</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -105,7 +107,7 @@
                                 <br/>
                             </div>
                           <div class="slide-filter"></div>
-                            <img src="images/slider/slide-1.jpg" class="par" alt="first">
+                            <img src="${pageContext.request.contextPath}/front/images/slider/slide-1.jpg" class="par" alt="first">
                         </li>
                         <li>
                             <div class="slide-text">
@@ -114,7 +116,7 @@
                                 <br/>
                             </div>
                           <div class="slide-filter"></div>
-                            <img src="images/slider/slide-2.jpg" class="par" alt="first">
+                            <img src="${pageContext.request.contextPath}/front/images/slider/slide-2.jpg" class="par" alt="first">
                         </li>
                         <li>
                             <div class="slide-text">
@@ -123,7 +125,7 @@
                                 <br/>
                             </div>
                           <div class="slide-filter"></div>
-                            <img src="images/slider/slide-3.jpg" class="par" alt="first">
+                            <img src="${pageContext.request.contextPath}/front/images/slider/slide-3.jpg" class="par" alt="first">
                         </li>
                     </ul>
                     <nav class="slides-navigation slidez">
@@ -237,58 +239,58 @@
                     <div class="col-md-12 mg-bt-80">
                         <div class="row portfolioContainer  text-center">
                             <div class="col-md-4 col-xs-6 portfolio-item websites">
-                                <a class="popup" href="images/portfolio/portfolio-thumb-1.jpg" data-lightbox-gallery="team-portfolio">
+                                <a class="popup" href="${pageContext.request.contextPath}/front/images/portfolio/portfolio-thumb-1.jpg" data-lightbox-gallery="team-portfolio">
                                     <span class="project-hover">
                                         <span>Designing UI/UX
                                         </span>
                                     </span>
-                                    <img src="images/portfolio/portfolio-thumb-1.jpg" alt="portfolio-thumb-1">
+                                    <img src="${pageContext.request.contextPath}/front/images/portfolio/portfolio-thumb-1.jpg" alt="portfolio-thumb-1">
                                 </a>
                             </div>
 
                             <div class="col-md-4 col-xs-6 portfolio-item illustrations">
-                                <a class="popup" href="images/portfolio/portfolio-thumb-5.jpg" data-lightbox-gallery="team-portfolio">
+                                <a class="popup" href="${pageContext.request.contextPath}/front/images/portfolio/portfolio-thumb-5.jpg" data-lightbox-gallery="team-portfolio">
                                     <span class="project-hover">
                                         <span>Designing Apps
                                         </span>
                                     </span>
-                                    <img src="images/portfolio/portfolio-thumb-5.jpg" alt="portfolio-thumb-5">
+                                    <img src="${pageContext.request.contextPath}/front/images/portfolio/portfolio-thumb-5.jpg" alt="portfolio-thumb-5">
                                 </a>
                             </div>
                             <div class="col-md-4 col-xs-6 portfolio-item websites">
-                                <a class="popup" href="images/portfolio/portfolio-thumb-3.jpg" title="Image with title"  data-lightbox-gallery="team-portfolio">
+                                <a class="popup" href="${pageContext.request.contextPath}/front/images/portfolio/portfolio-thumb-3.jpg" title="Image with title"  data-lightbox-gallery="team-portfolio">
                                     <span class="project-hover">
                                         <span>Branding Identity
                                         </span>
                                     </span>
-                                    <img src="images/portfolio/portfolio-thumb-3.jpg" alt="portfolio-thumb-3">
+                                    <img src="${pageContext.request.contextPath}/front/images/portfolio/portfolio-thumb-3.jpg" alt="portfolio-thumb-3">
                                 </a>
                             </div>
                             <div class="col-md-4 col-xs-6 portfolio-item photo">
-                                <a class="popup" href="images/portfolio/portfolio-thumb-4.jpg" data-lightbox-gallery="team-portfolio">
+                                <a class="popup" href="${pageContext.request.contextPath}/front/images/portfolio/portfolio-thumb-4.jpg" data-lightbox-gallery="team-portfolio">
                                     <span class="project-hover">
                                         <span>Photography
                                         </span>
                                     </span>
-                                    <img src="images/portfolio/portfolio-thumb-4.jpg" alt="portfolio-thumb-4">
+                                    <img src="${pageContext.request.contextPath}/front/images/portfolio/portfolio-thumb-4.jpg" alt="portfolio-thumb-4">
                                 </a>
                             </div>
                             <div class="col-md-4 col-xs-6 portfolio-item websites">
-                                <a class="popup" href="images/portfolio/portfolio-thumb-2.jpg" data-lightbox-gallery="team-portfolio">
+                                <a class="popup" href="${pageContext.request.contextPath}/front/images/portfolio/portfolio-thumb-2.jpg" data-lightbox-gallery="team-portfolio">
                                     <span class="project-hover">
                                         <span>Website Design
                                         </span>
                                     </span>
-                                    <img src="images/portfolio/portfolio-thumb-2.jpg" alt="portfolio-thumb-2">
+                                    <img src="${pageContext.request.contextPath}/front/images/portfolio/portfolio-thumb-2.jpg" alt="portfolio-thumb-2">
                                 </a>
                             </div>
                             <div class="col-md-4 col-xs-6 portfolio-item illustrations">
-                                <a class="popup" href="images/portfolio/portfolio-thumb-6.jpg" data-lightbox-gallery="team-portfolio">
+                                <a class="popup" href="${pageContext.request.contextPath}/front/images/portfolio/portfolio-thumb-6.jpg" data-lightbox-gallery="team-portfolio">
                                     <span class="project-hover">
                                         <span>Branding Illustration
                                         </span>
                                     </span>
-                                    <img src="images/portfolio/portfolio-thumb-6.jpg" alt="portfolio-thumb-6">
+                                    <img src="${pageContext.request.contextPath}/front/images/portfolio/portfolio-thumb-6.jpg" alt="portfolio-thumb-6">
                                 </a>
                             </div>
                         </div>
@@ -296,113 +298,6 @@
                 </div>
             </section>
             <!-- END PORTFOLIO -->
-
-            <!-- BEGIN TEAM -->
-            <section id="about" class="about gray">
-               
-			   <div class="row">
-                    <div class="col-md-12 mg-bt-80">
-                        <div class="header-content">
-                            <h2>通讯录</h2>
-                            <h5>距离再远，也不要忘了联系</h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="row mg-bt-40">
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="teams">
-                                    <div class="pict">
-                                        <img src="images/team/01.jpg" alt="Team 1">
-                                    </div>
-                                    <div class="desc">
-                                        <h3>熊嘉</h3>
-                                        <span>15070872014</span>
-                                        <div class="social">
-                                          <h5>录取院校：中国传媒大学</h5>										  
-						                  <h5>录取专业：传播学</h5>										  
-								          <h5>所在城市：北京</h5>										  
-										
-                                        </div>
-                                    </div>
-
-                                </div>
-                          </div>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="teams">
-                                    <div class="pict">
-                                        <img src="images/team/02.jpg" alt="Team 1">
-                                    </div>
-                                    <div class="desc">
-                                        <h3>熊嘉</h3>
-                                        <span>15070872014</span>
-                                        <div class="social">
-                                          <h5>录取院校：中国传媒大学</h5>										  
-						                  <h5>录取专业：传播学</h5>										  
-								          <h5>所在城市：北京</h5>										  
-										
-                                        </div>
-                                    </div>
-
-                                </div>
-                          </div>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="teams">
-                                    <div class="pict">
-                                        <img src="images/team/03.jpg" alt="Team 1">
-                                    </div>
-                                    <div class="desc">
-                                        <h3>熊嘉</h3>
-                                        <span>15070872014</span>
-                                        <div class="social">
-                                          <h5>录取院校：中国传媒大学</h5>										  
-						                  <h5>录取专业：传播学</h5>										  
-								          <h5>所在城市：北京</h5>										  
-										
-                                        </div>
-                                    </div>
-
-                                </div>
-                          </div>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="teams">
-                                    <div class="pict">
-                                        <img src="images/team/04.jpg" alt="Team 1">
-                                    </div>
-                                    <div class="desc">
-                                        <h3>熊嘉</h3>
-                                        <span>15070872014</span>
-                                        <div class="social">
-                                          <h5>录取院校：中国传媒大学</h5>										  
-						                  <h5>录取专业：传播学</h5>										  
-								          <h5>所在城市：北京</h5>										  
-										
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <ul class="pagination">
-                    <li><a href="#">&laquo;</a></li>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">6</a></li>
-                    <li><a href="#">7</a></li>
-                    <li><a href="#">8</a></li>
-                    <li><a href="#">9</a></li>
-                    <li><a href="#">10</a></li>
-                    <li><a href="#">&raquo;</a></li>
-                </ul><br>
-
-
-				
-            </section>
-            <!-- END TEAM -->
 
 
             <!-- BEGIN TESTIMONIAL -->
@@ -493,127 +388,7 @@
 
             <!-- END CLIENTS -->
 
-            <!-- BEGIN BLOG -->
-            <section id="blog-front" class="blog-front gray">
-                <div class="row">
-                    <div class="col-md-12 mg-bt-70">
-                        <div class="header-content">
-                            <h2>留言板</h2>
-                            <h5>有一些话，直到告别后，也遗憾的没有说出来</h5>
-                        </div>
-                    </div>
-                </div>
 
-                <form id="contactform1" role="form">
-                <div class="row">
-
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <textarea class="form-control" id="s_message" rows="10" placeholder="说点什么吧..."></textarea>
-                        </div>
-                    </div>
-
-                </div>
-
-                    <br>
-
-                    <div class="row">
-
-                        <div class="col-md-10">
-
-                        </div>
-
-                        <div class="col-md-2">
-
-                            <button type="submit" class="btn">提交留言</button>
-                        </div>
-
-                    </div>
-
-                </form>
-
-                <br>
-                <br><br><br>
-                <div class="col-md-12 mg-bt-70">
-                    <div class="header-content">
-                        <h3>留言列表</h3>
-                    </div>
-                </div>
-
-
-                <div class="row">
-                    <article class="col-md-4 col-sm-6">
-                        <figure class="blog-thumb">
-                            <img src="images/blog/blog-1.jpg" alt="blog-thumb">
-                        </figure>
-                        <div class="post-area">
-                            <a class="post-cat" href="">
-                            <h4>留言人姓名1</h4>
-                            </a>
-                            <a class="post-title" href="blog-post.html">
-                                <h3>时间1</h3>
-                            </a>
-                            <p class="post-content"> 一曲高歌和着蝉鸣而落，一段道路并着泪水而尽，一对书桌迎着热浪而离，一段故事却不会随着分别而终。未来无绝期，务必常联系。</p>                            
-                        </div>
-                    </article>
-
-                    <article class="col-md-4 col-sm-6">
-                        <figure class="blog-thumb">
-                            <img src="images/blog/blog-2.jpg" alt="blog-thumb">
-                        </figure>
-                        <div class="post-area">
-                            <a class="post-cat" href="">
-                            <h4>姓名2</h4>
-                            </a>
-                            <a class="post-title" href="blog-post.html">
-                                <h3>时间2</h3>
-                            </a>
-                            <p class="post-content"> 告别林荫校园，扬帆起航，展开拼搏的篇章；告别书声琅琅，豪情万丈，追逐心中的梦想；告别昔日同窗，情谊绵长，寄语真情的愿望。毕业之际，愿你怀着憧憬，迈向成功的方向！</p>
-                        </div>
-                    </article>
-
-                    <article class="col-md-4 col-sm-6">
-                        <figure class="blog-thumb">
-                            <img src="images/blog/blog-3.jpg" alt="blog-thumb">
-                        </figure>
-                        <div class="post-area">
-                            <a class="post-cat" href="">
-                            <h4>姓名3</h4>
-                            </a>
-                            <a class="post-title" href="blog-post.html">
-                                <h3>时间3</h3>
-                            </a>
-                            <p class="post-content"> 曾经以为，梦想最大，远方最美。现在感到，珍惜拥有，爱在身边。嗨，哥们，珍惜现在，珍惜拥有，祝好运连连快乐开心每一天！</p>
-                        </div>
-                    </article>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 text-center">
-
-                        <ul class="pagination">
-                            <li><a href="#">&laquo;</a></li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#">6</a></li>
-                            <li><a href="#">7</a></li>
-                            <li><a href="#">8</a></li>
-                            <li><a href="#">9</a></li>
-                            <li><a href="#">10</a></li>
-                            <li><a href="#">&raquo;</a></li>
-                        </ul><br>
-
-                        <!--
-
-                            <a class="btn blog-btn" href="blog.html">See what else is going on...</a>
-                        -->
-					
-					</div>
-                </div>
-            </section>
-            <!-- END BLOG -->
             
             <!-- BEGIN SUBSCRIPTION -->
 			
@@ -716,28 +491,28 @@
 
     <!-- Back to top -->
     <div id="backtotop">       
-        <a class="to-top-btn sscroll" href="index.html#home"><i class="fa fa-angle-double-up"></i></a>
+        <a class="to-top-btn sscroll" href="${pageContext.request.contextPath}/front/index.jsp#home"><i class="fa fa-angle-double-up"></i></a>
     </div>
 
 
     <!-- Library Scripts -->
 	
 
-    <script src="js/jquery-1.10.2.min.js"></script>
-    <script src="js/lib/jquery.preloader.js"></script>
-    <script src="js/lib/nivo-lightbox.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/lib/jquery.superslides.min.js"></script>
-    <script src="js/lib/smoothscroll.js"></script>
-    <script src="js/lib/jquery.sudoslider.min.js"></script>
-    <script src="js/lib/jquery.bxslider.min.js"></script>
-    <script src="js/lib/jquery.mixitup.min.js"></script>
-    <script src="js/lib/jquery.backtotop.js"></script>
-    <script src="js/lib/jquery.carouFredSel-6.2.1-packed.js"></script>
-    <script src="js/lib/retina.min.js"></script>
+    <script src="${pageContext.request.contextPath}/front/js/jquery-1.10.2.min.js"></script>
+    <script src="${pageContext.request.contextPath}/front/js/lib/jquery.preloader.js"></script>
+    <script src="${pageContext.request.contextPath}/front/js/lib/nivo-lightbox.min.js"></script>
+    <script src="${pageContext.request.contextPath}/front/js/bootstrap.min.js"></script>
+    <script src="${pageContext.request.contextPath}/front/js/lib/jquery.superslides.min.js"></script>
+    <script src="${pageContext.request.contextPath}/front/js/lib/smoothscroll.js"></script>
+    <script src="${pageContext.request.contextPath}/front/js/lib/jquery.sudoslider.min.js"></script>
+    <script src="${pageContext.request.contextPath}/front/js/lib/jquery.bxslider.min.js"></script>
+    <script src="${pageContext.request.contextPath}/front/js/lib/jquery.mixitup.min.js"></script>
+    <script src="${pageContext.request.contextPath}/front/js/lib/jquery.backtotop.js"></script>
+    <script src="${pageContext.request.contextPath}/front/js/lib/jquery.carouFredSel-6.2.1-packed.js"></script>
+    <script src="${pageContext.request.contextPath}/front/js/lib/retina.min.js"></script>
 
     <!-- Custom Script -->    
-    <script src="js/main.js"></script>
+    <script src="${pageContext.request.contextPath}/front/js/main.js"></script>
 </body>
 
 </html>

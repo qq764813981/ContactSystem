@@ -13,7 +13,9 @@ import org.hibernate.Transaction;
 public class UserDao implements IUserDao {
 
     @Override
-    public void save(User user) {
+    public boolean save(User user) {
+        boolean flag = false;
+
         Session session = null;
         Transaction tx = null;
 
@@ -26,12 +28,18 @@ public class UserDao implements IUserDao {
             session.save(user);
 
             tx.commit();
+
+            flag = true;
+
         }catch (Exception e){
+
+            flag = false;
             throw new RuntimeException(e);
         }finally {
             session.close();
         }
 
+        return flag;
 
     }
 
@@ -52,8 +60,10 @@ public class UserDao implements IUserDao {
             q.setParameter(0,phone);
             q.setParameter(1,password);
 
-
-            return (User)q.list().get(0);
+            //判断是否查到为空
+            if (!q.list().isEmpty()){
+                return (User) q.list().get(0);
+            }
 
 
         }catch (Exception e){
@@ -64,6 +74,6 @@ public class UserDao implements IUserDao {
             session.close();
         }
 
-
+        return null;
     }
 }

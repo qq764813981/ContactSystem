@@ -1,3 +1,5 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -56,7 +58,7 @@
             <div class="error-content">
                 <h3><i class="fa fa-warning text-yellow"></i> Oops! Page not found.</h3>
                 <p>
-                    We could not find the page you were looking for. Meanwhile, you may <a class="error-link" href='index.html'>return to dashboard</a> or try using the search form.
+                    We could not find the page you were looking for. Meanwhile, you may <a class="error-link" href='index.jsp'>return to dashboard</a> or try using the search form.
                 </p>
                 <form class='search-form'>
                     <input type="text" name="search" class='form-control' placeholder="Search">

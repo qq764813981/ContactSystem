@@ -1,3 +1,5 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,13 +16,13 @@
     }
     </style>
     <!-- Le styles -->
-    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/front/assets/js/jquery.min.js"></script>
 
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/loader-style.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.css">
-    <link rel="stylesheet" href="assets/css/signin.css">
-    <link rel="stylesheet" href="assets/css/extra-pages.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/front/assets/css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/front/assets/css/loader-style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/front/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/front/assets/css/signin.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/front/assets/css/extra-pages.css">
 
 
 
@@ -56,7 +58,7 @@
             <div class="error-content">
                 <h3><i class="fa fa-warning text-yellow"></i> Oops! Page not found.</h3>
                 <p>
-                    We could not find the page you were looking for. Meanwhile, you may <a class="error-link" href='index.html'>return to dashboard</a> or try using the search form.
+                    We could not find the page you were looking for. Meanwhile, you may <a class="error-link" href='index.jsp'>return to dashboard</a> or try using the search form.
                 </p>
                 <form class='search-form'>
                     <input type="text" name="search" class='form-control' placeholder="Search">

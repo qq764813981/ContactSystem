@@ -1,19 +1,21 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
-    <title>管理留言信息</title>
+    <title>录入信息</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Le styles -->
 
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/loader-style.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/sys/assets/css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/sys/assets/css/loader-style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/sys/assets/css/bootstrap.css">
 
-    <link rel="stylesheet" type="text/css" href="assets/js/progress-bar/number-pb.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/sys/assets/js/progress-bar/number-pb.css">
 
 
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=QXwuA2Zi8h3huVQvqVrW2MhU"></script>
@@ -33,7 +35,7 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <!-- Fav and touch icons -->
-    <link rel="shortcut icon" href="assets/ico/minus.png">
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/sys/assets/ico/minus.png">
 </head>
 
 <body>
@@ -352,7 +354,7 @@
                           -->
 
                     <li>
-                        <a class="tooltip-tip ajax-load" href="index.html" title="主页">
+                        <a class="tooltip-tip ajax-load" href="${pageContext.request.contextPath}/sys/index.jsp" title="主页">
                             <i class="icon-view-thumb"></i>
                             <span>主页</span>
 
@@ -360,7 +362,7 @@
                     </li>
 
                     <li>
-                        <a class="tooltip-tip ajax-load" href="message.html" title="管理留言信息">
+                        <a class="tooltip-tip ajax-load" href="${pageContext.request.contextPath}/sys/message.jsp" title="管理留言信息">
                             <i class="icon-view-thumb"></i>
                             <span>管理留言信息</span>
 
@@ -368,7 +370,7 @@
                     </li>
 
                     <li>
-                        <a class="tooltip-tip ajax-load" href="contactmsg.html" title="录入通讯信息">
+                        <a class="tooltip-tip ajax-load" href="${pageContext.request.contextPath}/sys/contactmsg.jsp" title="录入通讯信息">
 
                             <i class="icon-document"></i>
                             <!--                         <i class="icon-camera"></i>  -->
@@ -391,7 +393,7 @@
                     </li>
 
                     <li>
-                        <a class="tooltip-tip ajax-load" href="index.html" title="通讯地图">
+                        <a class="tooltip-tip ajax-load" href="index.jsp" title="通讯地图">
                             <i class="icon-window"></i>
                             <span>通讯地图</span>
 
@@ -435,7 +437,7 @@
                                 <a class="tooltip-tip2 ajax-load" href="time-line.html" title="Time Line"><i class="entypo-clock"></i><span>Time Line</span></a>
                             </li>
                             <li>
-                                <a class="tooltip-tip2" href="404.html" title="404 Error Page"><i class="icon-thumbs-down"></i><span>404 Error Page</span></a>
+                                <a class="tooltip-tip2" href="404.jsp" title="404 Error Page"><i class="icon-thumbs-down"></i><span>404 Error Page</span></a>
                             </li>
                             <li>
                                 <a class="tooltip-tip2" href="500.html" title="500 Error Page"><i class="icon-thumbs-down"></i><span>500 Error Page</span></a>
@@ -447,7 +449,7 @@
                     </li>
 
                     <li>
-                        <a class="tooltip-tip " href="login.html" title="login">
+                        <a class="tooltip-tip " href="login.jsp" title="login">
                             <i class="icon-download"></i>
                             <span>Login</span>
                         </a>
@@ -619,6 +621,7 @@
                 <div class="col-lg-3">
                     <h2 class="tittle-content-header">
                         <i class="icon-window"></i>
+
                     </h2>
 
                 </div>
@@ -682,7 +685,7 @@
             </li>
             <li><i class="fa fa-lg fa-angle-right"></i>
             </li>
-            <li><a href="#" title="Sample page 1">管理留言信息</a>
+            <li><a href="#" title="Sample page 1">上传联系人信息</a>
             </li>
 
             <!--
@@ -705,40 +708,57 @@
 
         <div id="paper-middle">
 
-           <div style="width: 100%;height: 100%">
-               <table class="table table-bordered table-striped cf">
-                   <thead class="cf">
-                   <tr>
-                       <th>留言序号</th>
-                       <th>留言人</th>
-                       <th class="numeric">留言内容</th>
-                       <th class="numeric">操作</th>
+            <div style="height:100%;width: 100%;background-color:white" >
 
-                   </tr>
-                   </thead>
-                   <tbody>
-                   <tr>
-                       <td>1</td>
-                       <td>aa</td>
-                       <td class="numeric"></td>
-                       <td class="numeric">
+                <br>
+                <br>
+                <br>
 
-                           <form class="form-horizontal" role="form" >
+                <div class="form_center">
+                    <form role="form" enctype="multipart/form-data" method="post" action="${pageContext.request.contextPath}/AddContactMessageServlet">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">姓名：</label>
+                            <input type="text" placeholder="输入姓名" id="exampleInputEmail1" class="form-control" name="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">录取院校：</label>
+                            <input type="text" placeholder="输入院校名" id="exampleInputPassword1" class="form-control" name="college">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword2">录取专业：</label>
+                            <input type="text" placeholder="输入录取专业" id="exampleInputPassword2" class="form-control" name="major">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword3">所在城市：</label>
+                            <input type="text" placeholder="输入所在城市" id="exampleInputPassword3" class="form-control" name="city">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword4">联系电话：</label>
+                            <input type="text" placeholder="输入联系电话" id="exampleInputPassword4" class="form-control" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputFile">选择一张小于<font>1M</font>的照片</label>
+                            <input type="file" id="exampleInputFile" name="file">
+                            <p class="help-block">提交一张联系人的头像</p>
+                        </div>
 
+                        <button class="btn btn-info" type="submit">确认提交</button>
 
+                        <%
+                           if (session.getAttribute("loggingMes")!=null)
+                           {
+                        %>
 
-                                       <button type="submit" class="btn btn-info btn-ls">删除</button>
+                         <%=session.getAttribute("loggingMes")%>
 
+                        <%
+                            }
+                        %>
+                    </form>
+                </div>
 
-                           </form>
+            </div>
 
-                       </td>
-
-                   </tr>
-
-                   </tbody>
-               </table>
-           </div>
 
             <h1>&nbsp;&nbsp;&nbsp;网站运行状态</h1>
             <!--
@@ -1069,19 +1089,19 @@
     </div>
 
     <!-- END OF RIGHT SLIDER CONTENT-->
-    <script type="text/javascript" src="assets/js/jquery.js"></script>
-    <script src="assets/js/progress-bar/src/jquery.velocity.min.js"></script>
-    <script src="assets/js/progress-bar/number-pb.js"></script>
-    <script src="assets/js/progress-bar/progress-app.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/sys/assets/js/jquery.js"></script>
+    <script src="${pageContext.request.contextPath}/sys/assets/js/progress-bar/src/jquery.velocity.min.js"></script>
+    <script src="${pageContext.request.contextPath}/sys/assets/js/progress-bar/number-pb.js"></script>
+    <script src="${pageContext.request.contextPath}/sys/assets/js/progress-bar/progress-app.js"></script>
 
 
 
     <!-- MAIN EFFECT -->
-    <script type="text/javascript" src="assets/js/preloader.js"></script>
-    <script type="text/javascript" src="assets/js/bootstrap.js"></script>
-    <script type="text/javascript" src="assets/js/app.js"></script>
-    <script type="text/javascript" src="assets/js/load.js"></script>
-    <script type="text/javascript" src="assets/js/main.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/sys/assets/js/preloader.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/sys/assets/js/bootstrap.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/sys/assets/js/app.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/sys/assets/js/load.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/sys/assets/js/main.js"></script>
 
 
 
@@ -1089,15 +1109,15 @@
     <!-- GAGE -->
 
 
-    <script type="text/javascript" src="assets/js/chart/jquery.flot.js"></script>
-    <script type="text/javascript" src="assets/js/chart/jquery.flot.resize.js"></script>
-    <script type="text/javascript" src="assets/js/chart/realTime.js"></script>
-    <script type="text/javascript" src="assets/js/speed/canvasgauge-coustom.js"></script>
-    <script type="text/javascript" src="assets/js/countdown/jquery.countdown.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/sys/assets/js/chart/jquery.flot.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/sys/assets/js/chart/jquery.flot.resize.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/sys/assets/js/chart/realTime.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/sys/assets/js/speed/canvasgauge-coustom.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/sys/assets/js/countdown/jquery.countdown.js"></script>
 
 
 
-    <script src="assets/js/jhere-custom.js"></script>
+    <script src="${pageContext.request.contextPath}/sys/assets/js/jhere-custom.js"></script>
 
     <script>
         var gauge4 = new Gauge("canvas4", {
@@ -1125,7 +1145,7 @@
                 type: 'smart',
                 zoom: 10
             }).jHERE('marker', [52.500556, 13.338889], {
-                icon: 'assets/img/marker.png',
+                icon: '${pageContext.request.contextPath}/sys/assets/img/marker.png',
                 anchor: {
                     x: 12,
                     y: 32
@@ -1190,7 +1210,6 @@
 </body>
 
 </html>
-
 
 
 

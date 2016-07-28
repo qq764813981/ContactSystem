@@ -22,5 +22,10 @@
 		<!--加载用户表映射-->
         <mapping resource="com/cxspace/entity/User.hbm.xml"></mapping>
 
+		<mapping resource="com/cxspace/entity/Contact.hbm.xml"></mapping>
+		<mapping resource="com/cxspace/entity/Suggest.hbm.xml"></mapping>
+
+		<mapping resource="com/cxspace/entity/Message.hbm.xml"></mapping>
+
 	</session-factory>
 </hibernate-configuration>

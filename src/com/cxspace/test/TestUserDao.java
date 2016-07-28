@@ -11,14 +11,14 @@ import org.junit.Test;
 public class TestUserDao {
 
 
-
+    @Test
     public void Testsave(){
         User user = new User();
 
         user.setId(WebUtils.getRandomId(10));
-        user.setPhone("13037239781");
-        user.setPassword("13037239781");
-        user.setType(1);
+        user.setPhone("13037239782");
+        user.setPassword("13037239782");
+        user.setType(0);
 
         UserDao userDao = new UserDao();
 
@@ -28,7 +28,7 @@ public class TestUserDao {
 
 
 
-    @Test
+
     public void Testfind(){
 
         UserDao userDao = new UserDao();
