@@ -14,18 +14,19 @@
 
     <title>高三一班通讯录</title>
 
+    <!--
+
     <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
     <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 
+    -->
+
     <!--Library Styles-->    
     <link href="${pageContext.request.contextPath}/front/css/bootstrap.min.css" rel="stylesheet">
-
     <link href="${pageContext.request.contextPath}/front/css/lib/font-awesome.css" rel="stylesheet">
-
     <link href="${pageContext.request.contextPath}/front/css/lib/nivo-lightbox.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/front/css/lib/nivo-themes/default/default.css" rel="stylesheet">
-
 
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=QXwuA2Zi8h3huVQvqVrW2MhU"></script>
 	
@@ -66,11 +67,26 @@
                     </a>
                 </div>
 
+                <%
+                    if(session.getAttribute("loginUser")!=null)
+                    {
+                %>
+                <h5 style="text-align: center">当前帐号</h5>
+                <h5 style="text-align: center"><%=session.getAttribute("loginUser")%>
+
+                    </h5>
+                <%
+                    }
+                %>
+
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-navbar-collapse">
                     <ul class="nav navbar-nav">
 
-                        <li class="active"><a class="sscroll" href="${pageContext.request.contextPath}/front/index.jsp#home">主页</a></li>
+
+                        <li><a   href="${pageContext.request.contextPath}/ExitLoginServlet">退出登录</a></li>
+
+                        <li class="active"><a  class="sscroll" href="${pageContext.request.contextPath}/front/index.jsp#home">主页</a></li>
 						
 						<!--
 						
@@ -91,18 +107,20 @@
 
 						
                         <li><a  href="${pageContext.request.contextPath}/PageMessageServlet">留言板</a></li>
-                        <li><a class="sscroll" href="${pageContext.request.contextPath}/front/index.jsp#contact">技术支持</a></li>
+                        <li><a  class="sscroll" href="${pageContext.request.contextPath}/front/index.jsp#contact">发送建议</a></li>
 
                         <%
-                          if (request.getAttribute("suggestMessage")!=null)
-                          {
+                            if (request.getAttribute("suggestMessage")!=null)
+                            {
                         %>
-                           <h3><%=request.getAttribute("suggestMessage")%></h3>
+                        <h3><%=request.getAttribute("suggestMessage")%></h3>
                         <%
                             }
                         %>
 
                     </ul>
+
+
                 </div>
                 <!-- /.navbar-collapse -->
             </nav>

@@ -232,7 +232,7 @@
                     </a>
                     <ul style="margin-top:14px;" role="menu" class="dropdown-setting dropdown-menu">
                         <li>
-                            <a href="#">
+                            <a href="${pageContext.request.contextPath}/AdminLoginOutServlet">
                                 <span class="entypo-user"></span>&#160;&#160;退出登录.</a>
                         </li>
                         <!--
@@ -773,19 +773,34 @@
                    </tbody>
                </table>
 
+               <div class="row">
+
+                   <div class="col-md-1"></div>
+
+                   <div class="col-md-11">
                <ul class="pagination">
                    <li>
                        <a href="${pageContext.request.contextPath}/sys/message.jsp?currentPage=<%=pageBean.getCurrentPage()-1%>">
                        &laquo;</a></li>
 
-                   <li><a href="#">1</a></li>
-                   <li><a href="#">2</a></li>
-                   <li><a href="#">3</a></li>
-                   <li><a href="#">4</a></li>
-                   <li><a href="#">5</a></li>
+                   <%
+
+                       for (int i = 0 ; i < pageBean.getTotalPage(); i++)
+                       {
+                           if ((i+1)!=pageBean.getCurrentPage())
+                           {
+
+                   %>
+                   <li><a href="${pageContext.request.contextPath}/sys/message.jsp?currentPage=<%=i+1%>"><%=i+1%></a></li>
+                   <%
+                           }
+                       }
+                   %>
+
                    <li><a href="${pageContext.request.contextPath}/sys/message.jsp?currentPage=<%=pageBean.getCurrentPage()+1%>">&raquo;</a></li>
                </ul>
-
+                   </div>
+               </div>
            </div>
 
 
@@ -986,136 +1001,6 @@
     </div>
     <!--  END OF PAPER WRAP -->
 
-    <!-- RIGHT SLIDER CONTENT -->
-    <div class="sb-slidebar sb-right">
-        <div class="right-wrapper">
-            <div class="row">
-                <h3>
-                    <span><i class="entypo-gauge"></i>&nbsp;&nbsp;MAIN WIDGET</span>
-                </h3>
-                <div class="col-lg-12">
-
-                    <div class="widget-knob">
-                        <span class="chart" style="position:relative" data-percent="86">
-                            <span class="percent"></span>
-                        </span>
-                    </div>
-                    <div class="widget-def">
-                        <b>Distance traveled</b>
-                        <br>
-                        <i>86% to the check point</i>
-                    </div>
-
-                    <div class="widget-knob">
-                        <span class="speed-car" style="position:relative" data-percent="60">
-                            <span class="percent2"></span>
-                        </span>
-                    </div>
-                    <div class="widget-def">
-                        <b>The average speed</b>
-                        <br>
-                        <i>30KM/h avarage speed</i>
-                    </div>
-
-
-                    <div class="widget-knob">
-                        <span class="overall" style="position:relative" data-percent="25">
-                            <span class="percent3"></span>
-                        </span>
-                    </div>
-                    <div class="widget-def">
-                        <b>Overall result</b>
-                        <br>
-                        <i>30KM/h avarage Result</i>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div style="margin-top:0;" class="right-wrapper">
-            <div class="row">
-                <h3>
-                    <span><i class="entypo-chat"></i>&nbsp;&nbsp;CHAT</span>
-                </h3>
-                <div class="col-lg-12">
-                    <span class="label label-warning label-chat">Online</span>
-                    <ul class="chat">
-                        <li>
-                            <a href="#">
-                                <span>
-                                    <img alt="" class="img-chat img-circle" src="http://api.randomuser.me/portraits/thumb/men/20.jpg">
-                                </span><b>Dave Junior</b>
-                                <br><i>Last seen : 08:00 PM</i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span>
-                                    <img alt="" class="img-chat img-circle" src="http://api.randomuser.me/portraits/thumb/men/21.jpg">
-                                </span><b>Kenneth Lucas</b>
-                                <br><i>Last seen : 07:21 PM</i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span>
-                                    <img alt="" class="img-chat img-circle" src="http://api.randomuser.me/portraits/thumb/men/22.jpg">
-                                </span><b>Heidi Perez</b>
-                                <br><i>Last seen : 05:43 PM</i>
-                            </a>
-                        </li>
-
-
-                    </ul>
-
-                    <span class="label label-chat">Offline</span>
-                    <ul class="chat">
-                        <li>
-                            <a href="#">
-                                <span>
-                                    <img alt="" class="img-chat img-offline img-circle" src="http://api.randomuser.me/portraits/thumb/men/23.jpg">
-                                </span><b>Dave Junior</b>
-                                <br><i>Last seen : 08:00 PM</i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span>
-                                    <img alt="" class="img-chat img-offline img-circle" src="http://api.randomuser.me/portraits/thumb/women/24.jpg">
-                                </span><b>Kenneth Lucas</b>
-                                <br><i>Last seen : 07:21 PM</i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span>
-                                    <img alt="" class="img-chat img-offline img-circle" src="http://api.randomuser.me/portraits/thumb/men/25.jpg">
-                                </span><b>Heidi Perez</b>
-                                <br><i>Last seen : 05:43 PM</i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span>
-                                    <img alt="" class="img-chat img-offline img-circle" src="http://api.randomuser.me/portraits/thumb/women/25.jpg">
-                                </span><b>Kenneth Lucas</b>
-                                <br><i>Last seen : 07:21 PM</i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span>
-                                    <img alt="" class="img-chat img-offline img-circle" src="http://api.randomuser.me/portraits/thumb/men/26.jpg">
-                                </span><b>Heidi Perez</b>
-                                <br><i>Last seen : 05:43 PM</i>
-                            </a>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- END OF RIGHT SLIDER CONTENT-->
     <script type="text/javascript" src="${pageContext.request.contextPath}/sys/assets/js/jquery.js"></script>

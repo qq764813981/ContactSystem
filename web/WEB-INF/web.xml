@@ -126,4 +126,24 @@
         <url-pattern>/DeleteMessageServlet</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <servlet-name>ExitLoginServlet</servlet-name>
+        <servlet-class>com.cxspace.control.ExitLoginServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>ExitLoginServlet</servlet-name>
+        <url-pattern>/ExitLoginServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>AdminLoginOutServlet</servlet-name>
+         <servlet-class>com.cxspace.control.AdminLoginOutServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>AdminLoginOutServlet</servlet-name>
+        <url-pattern>/AdminLoginOutServlet</url-pattern>
+    </servlet-mapping>
+    
 </web-app>
