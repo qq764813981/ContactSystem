@@ -59,7 +59,7 @@ public class MessageDao implements IMessageDao {
 
             tx = session.beginTransaction();
 
-            Query q = session.createQuery("from Message");
+            Query q = session.createQuery("from Message order by write_time desc ");
 
             return q.list();
 
@@ -93,7 +93,7 @@ public class MessageDao implements IMessageDao {
                 session.delete(obj);
             }
 
-            tx.commit();
+
 
 
         }catch (Exception e){
@@ -102,6 +102,7 @@ public class MessageDao implements IMessageDao {
             throw new RuntimeException(e);
         }finally {
 
+            tx.commit();
             session.close();
         }
 
@@ -135,7 +136,7 @@ public class MessageDao implements IMessageDao {
             session = HibernateUtils.getSession();
             tx = session.beginTransaction();
 
-            Query q = session.createQuery("from Message");
+            Query q = session.createQuery("from Message order by write_time desc ");
 
             q.setFirstResult(index);
 

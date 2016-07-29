@@ -2,6 +2,7 @@ package com.cxspace.dao;
 
 import com.cxspace.bean.PageBean;
 import com.cxspace.entity.Contact;
+import com.cxspace.entity.User;
 
 import java.util.List;
 
@@ -13,8 +14,9 @@ public interface IContactDao {
     //录入通讯信息
     public boolean loggingContactMessage(Contact contact);
 
+
     //修改通讯电话
-    public boolean updateContactMessage(Contact contact);
+    public boolean updateContactMessage(String oldphone,String newphone);
 
     //展示所有联系人信息
     public List<Contact> findAllContact();
@@ -28,5 +30,7 @@ public interface IContactDao {
       查询总记录数
      */
     public long getTotalCount();
+
+    public Contact find(String phone);
 
 }

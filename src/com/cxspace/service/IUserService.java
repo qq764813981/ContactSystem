@@ -18,5 +18,7 @@ public interface IUserService {
     //添加用户信息
     public boolean AddUser(User user);
 
+    public User findUserByPhone(String phone);
 
+    public boolean deleteUserById(String id);
 }

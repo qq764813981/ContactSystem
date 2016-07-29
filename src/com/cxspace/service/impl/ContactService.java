@@ -20,16 +20,24 @@ public class ContactService implements IContactService{
 
     }
 
-    @Override
-    public boolean updateContactPhone(Contact contact) {
-        ContactDao contactDao = new ContactDao();
 
-        return contactDao.updateContactMessage(contact);
-    }
 
     @Override
     public void getPageData(PageBean<Contact> pb) {
         ContactDao contactDao = new ContactDao();
         contactDao.getAll(pb);
+    }
+
+    @Override
+    public Contact findContactByPhone(String phone) {
+        ContactDao contactDao = new ContactDao();
+        return contactDao.find(phone);
+    }
+
+    @Override
+    public boolean changeContactPhone(String oldphone, String newphone) {
+
+        ContactDao contactDao = new ContactDao();
+        return contactDao.updateContactMessage(oldphone,newphone);
     }
 }

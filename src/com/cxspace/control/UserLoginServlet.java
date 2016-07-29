@@ -29,6 +29,7 @@ public class UserLoginServlet extends HttpServlet {
 
         if(userService.userLogin(phone,password)){
 
+            session.setAttribute("loginUser",phone);
             response.sendRedirect(request.getContextPath()+"/front/index.jsp");
 
         }else {

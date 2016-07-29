@@ -17,6 +17,9 @@ import java.util.Date;
 public class TestMessageDao {
 
 
+
+
+    @Test
     public void testaddMessage(){
 
         Message message = new Message();
@@ -42,13 +45,14 @@ public class TestMessageDao {
 
 
 
+
     public void testfindAllMessage(){
 
         System.out.println(new MessageDao().findAllMessage());
 
     }
 
-    @Test
+
 
     public void testdeleteMessage(){
 

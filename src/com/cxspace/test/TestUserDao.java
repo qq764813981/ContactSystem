@@ -2,6 +2,7 @@ package com.cxspace.test;
 
 import com.cxspace.dao.impl.UserDao;
 import com.cxspace.entity.User;
+import com.cxspace.service.impl.UserService;
 import com.cxspace.utils.WebUtils;
 import org.junit.Test;
 
@@ -11,7 +12,7 @@ import org.junit.Test;
 public class TestUserDao {
 
 
-    @Test
+
     public void Testsave(){
         User user = new User();
 
@@ -28,6 +29,13 @@ public class TestUserDao {
 
 
 
+    @Test
+    public void testDelete(){
+
+        UserDao userDao = new UserDao();
+        userDao.deleteUser("1047395957");
+
+    }
 
     public void Testfind(){
 

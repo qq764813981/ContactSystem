@@ -64,4 +64,17 @@ public class UserService implements IUserService{
         UserDao userDao = new UserDao();
         return userDao.save(user);
     }
+
+    @Override
+    public User findUserByPhone(String phone) {
+
+        UserDao userDao = new UserDao();
+        return userDao.find(phone);
+    }
+
+    @Override
+    public boolean deleteUserById(String id) {
+        UserDao userDao = new UserDao();
+        return userDao.deleteUser(id);
+    }
 }

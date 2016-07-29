@@ -734,7 +734,7 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword4">联系电话：</label>
-                            <input type="text" placeholder="输入联系电话" id="exampleInputPassword4" class="form-control" name="phone">
+                            <input type="number" placeholder="输入联系电话" id="exampleInputPassword4" class="form-control" name="phone">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputFile">选择一张小于<font>1M</font>的照片</label>

@@ -11,4 +11,7 @@ public interface IMessageService {
 
     public void getPageData(PageBean<Message> pb);
 
+    public boolean addMessage(Message message);
+
+    public boolean deleteMessage(String id);
 }

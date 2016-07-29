@@ -3,6 +3,7 @@ package com.cxspace.dao.impl;
 import com.cxspace.bean.PageBean;
 import com.cxspace.dao.IContactDao;
 import com.cxspace.entity.Contact;
+import com.cxspace.entity.User;
 import com.cxspace.utils.HibernateUtils;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -47,7 +48,7 @@ public class ContactDao implements IContactDao{
     }
 
     @Override
-    public boolean updateContactMessage(Contact contact) {
+    public boolean updateContactMessage(String oldphone , String newphone) {
 
         boolean flag = true;
 
@@ -59,9 +60,11 @@ public class ContactDao implements IContactDao{
 
             tx = session.beginTransaction();
 
-            Query query = session.createQuery("update Contact contact set contact.phone = :phone");
+            Query query = session.createQuery("update Contact contact set contact.phone = ? where contact.phone=?");
 
-            query.setString("phone",contact.getPhone());
+            query.setParameter(0,newphone);
+
+            query.setParameter(1,oldphone);
 
             query.executeUpdate();
 
@@ -90,10 +93,9 @@ public class ContactDao implements IContactDao{
 
             tx = session.beginTransaction();
 
-            Query q = session.createQuery("from Contact");
+            Query q = session.createQuery("from Contact order by name asc ");
 
             return q.list();
-
         }catch (Exception e){
             throw new RuntimeException(e);
         }finally {
@@ -101,6 +103,7 @@ public class ContactDao implements IContactDao{
             tx.commit();
             session.close();
         }
+
 
     }
 
@@ -173,6 +176,39 @@ public class ContactDao implements IContactDao{
 
 
         return count;
+    }
+
+    @Override
+    public Contact find(String phone) {
+
+        Session session = null;
+        Transaction tx = null;
+
+        try {
+
+            session = HibernateUtils.getSession();
+            tx = session.beginTransaction();
+
+            Query q = session.createQuery("from Contact where phone = ?");
+
+            q.setParameter(0,phone);
+
+            //判断是否查到为空
+            if (!q.list().isEmpty()){
+                return (Contact) q.list().get(0);
+            }
+
+        }catch (Exception e){
+            throw new RuntimeException(e);
+        }finally {
+
+            System.out.println("执行了");
+            tx.commit();
+            session.close();
+        }
+
+        return null;
+
     }
 
 

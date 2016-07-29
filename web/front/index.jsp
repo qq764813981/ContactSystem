@@ -20,7 +20,9 @@
 
     <!--Library Styles-->    
     <link href="${pageContext.request.contextPath}/front/css/bootstrap.min.css" rel="stylesheet">
+
     <link href="${pageContext.request.contextPath}/front/css/lib/font-awesome.css" rel="stylesheet">
+
     <link href="${pageContext.request.contextPath}/front/css/lib/nivo-lightbox.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/front/css/lib/nivo-themes/default/default.css" rel="stylesheet">
 
@@ -32,6 +34,8 @@
     <link href="${pageContext.request.contextPath}/front/css/scheme/purple.css" rel="stylesheet">
 
     <!--[if lt IE 9]>
+
+
       <script src="/front/js/html5shiv.js"></script>
       <script src="/front/js/respond.min.js"></script>
     <![endif]-->
@@ -88,6 +92,16 @@
 						
                         <li><a  href="${pageContext.request.contextPath}/PageMessageServlet">留言板</a></li>
                         <li><a class="sscroll" href="${pageContext.request.contextPath}/front/index.jsp#contact">技术支持</a></li>
+
+                        <%
+                          if (request.getAttribute("suggestMessage")!=null)
+                          {
+                        %>
+                           <h3><%=request.getAttribute("suggestMessage")%></h3>
+                        <%
+                            }
+                        %>
+
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -314,7 +328,7 @@
                         </div>
                     </div>
 
-                    <form id="contactform" role="form">
+                    <form id="contactform" role="form" method="post" action="${pageContext.request.contextPath}/updateContactPhoneServlet">
                         <div class="col-md-3">
 
                         </div>
@@ -322,7 +336,7 @@
                         <div class="col-md-4">
 
                             <div class="form-group">
-                                <input type="text" class="form-control" id="name" placeholder="请输入新的手机号">
+                                <input type="number" class="form-control" id="name" placeholder="请输入新的手机号" name="newPhone">
                             </div>
 
                         </div>
@@ -449,21 +463,21 @@
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-6">
-                        <form id="contact-form" role="form">                            
+                        <form id="contact-form1" role="form" method="post" action="${pageContext.request.contextPath}/AddSuggestServlet">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="c_name" placeholder="名字">
+                                <input type="text" class="form-control" id="c_name" placeholder="名字" name="name">
                             </div>
                             
                             <div class="form-group">
-                                <input type="email" class="form-control" id="c_email" placeholder="邮箱">                                
+                                <input type="email" class="form-control" id="c_email" placeholder="邮箱" name="email">
                             </div>
                             
                             <div class="form-group">
-                                <textarea class="form-control" id="c_message" rows="10" placeholder="信息"></textarea>
+                                <textarea class="form-control" id="c_message" rows="10" placeholder="信息" name="content"></textarea>
                             </div>
                             <br/>
                             <button type="submit" class="btn">发送信息</button>
-                            <div class="ajax-response"></div>
+
                         </form>
                     </div>
                     

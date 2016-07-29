@@ -1,5 +1,9 @@
 package com.cxspace.utils;
 
+import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Random;
 
 /**
@@ -24,5 +28,18 @@ public class WebUtils {
         return sb.toString();
     }
 
+
+    public static Timestamp getCurrentTime(){
+
+        Date date = new Date();
+
+        DateFormat format=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+        String time=format.format(date);
+
+        Timestamp currentTime = TransTimestamp.stringToTimestamp(time);
+
+        return currentTime;
+    }
 
 }

@@ -1,3 +1,7 @@
+<%@ page import="com.cxspace.service.impl.MessageService" %>
+<%@ page import="com.cxspace.entity.Message" %>
+<%@ page import="com.cxspace.bean.PageBean" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!DOCTYPE html>
@@ -702,6 +706,31 @@
 
 
 
+        <%
+            MessageService messageService = new MessageService();
+
+            String currPage = request.getParameter("currentPage");
+
+            //初始化
+            if (currPage == null ||"".equals(currPage.trim())){
+                currPage="1";
+            }
+
+            int currentPage = Integer.parseInt(currPage);
+
+
+
+            //创建pagebean,设置当前页参数
+            PageBean<Message> pageBean = new PageBean<>();
+
+            pageBean.setCurrentPage(currentPage);
+
+            messageService.getPageData(pageBean);
+
+            List<Message> messages = pageBean.getPageData();
+
+
+        %>
 
 
 
@@ -719,28 +748,46 @@
                    </tr>
                    </thead>
                    <tbody>
+
+
+                   <%
+                      for(int i = 0 ; i < messages.size() ; i++)
+                      {
+                   %>
+
                    <tr>
-                       <td>1</td>
-                       <td>aa</td>
-                       <td class="numeric"></td>
+                       <td><%=i+1%></td>
+                       <td><%=messages.get(i).getName()%></td>
+                       <td class="numeric"><%=messages.get(i).getContent()%></td>
                        <td class="numeric">
-
-                           <form class="form-horizontal" role="form" >
-
-
-
-                                       <button type="submit" class="btn btn-info btn-ls">删除</button>
-
-
-                           </form>
-
+                           <a class="btn" href="${pageContext.request.contextPath}/DeleteMessageServlet?messageId=<%=messages.get(i).getId()%>">
+                               删除
+                           </a>
                        </td>
 
                    </tr>
 
+                   <%
+                       }
+                   %>
                    </tbody>
                </table>
+
+               <ul class="pagination">
+                   <li>
+                       <a href="${pageContext.request.contextPath}/sys/message.jsp?currentPage=<%=pageBean.getCurrentPage()-1%>">
+                       &laquo;</a></li>
+
+                   <li><a href="#">1</a></li>
+                   <li><a href="#">2</a></li>
+                   <li><a href="#">3</a></li>
+                   <li><a href="#">4</a></li>
+                   <li><a href="#">5</a></li>
+                   <li><a href="${pageContext.request.contextPath}/sys/message.jsp?currentPage=<%=pageBean.getCurrentPage()+1%>">&raquo;</a></li>
+               </ul>
+
            </div>
+
 
             <h1>&nbsp;&nbsp;&nbsp;网站运行状态</h1>
             <!--

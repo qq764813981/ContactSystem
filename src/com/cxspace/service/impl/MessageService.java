@@ -12,9 +12,19 @@ public class MessageService implements IMessageService{
 
     @Override
     public void getPageData(PageBean<Message> pb) {
-
         MessageDao messageDao = new MessageDao();
         messageDao.getAll(pb);
+    }
 
+    @Override
+    public boolean addMessage(Message message) {
+        MessageDao messageDao = new MessageDao();
+        return messageDao.addMessage(message);
+    }
+
+    @Override
+    public boolean deleteMessage(String id) {
+        MessageDao messageDao = new MessageDao();
+        return messageDao.deleteMessage(id);
     }
 }

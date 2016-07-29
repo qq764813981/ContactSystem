@@ -1,3 +1,5 @@
+<%@ page import="com.cxspace.entity.Contact" %>
+<%@ page import="com.cxspace.bean.PageBean" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -26,7 +28,7 @@
 
 
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=QXwuA2Zi8h3huVQvqVrW2MhU"></script>
-	
+
     <!--Template Styles-->
     <link href="${pageContext.request.contextPath}/front/css/style.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/front/css/scheme/purple.css" rel="stylesheet">
@@ -104,6 +106,7 @@
 
             <!-- BEGIN TEAM -->
             <section id="about" class="about gray">
+
 
 			   <div class="row">
                     <div class="col-md-12 mg-bt-80">
@@ -212,16 +215,26 @@
 
                 <ul class="pagination">
                     <li><a href="${pageContext.request.contextPath}/PageContactServlet?currentPage=${requestScope.pageBean.currentPage-1}">&laquo;</a></li>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">6</a></li>
-                    <li><a href="#">7</a></li>
-                    <li><a href="#">8</a></li>
-                    <li><a href="#">9</a></li>
-                    <li><a href="#">10</a></li>
+
+
+
+                        <%
+                            PageBean<Contact> contactPageBean = (PageBean<Contact>) request.getAttribute("pageBean");
+
+                            for (int i = 0 ; i < contactPageBean.getTotalPage(); i++)
+                            {
+
+                                     if ((i+1)!=contactPageBean.getCurrentPage())
+                                   {
+
+                           %>
+                        <li><a href="${pageContext.request.contextPath}/PageContactServlet?currentPage=<%=i+1%>"><%=i+1%></a></li>
+                           <%
+                                   }
+
+                            }
+                        %>
+
                     <li><a href="${pageContext.request.contextPath}/PageContactServlet?currentPage=${requestScope.pageBean.currentPage+1}">&raquo;</a></li>
                 </ul><br>
 

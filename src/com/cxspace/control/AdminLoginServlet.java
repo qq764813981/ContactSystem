@@ -26,7 +26,7 @@ public class AdminLoginServlet extends HttpServlet {
         UserService userService = new UserService();
         if (userService.AdminLogin(phone,password)){
             //登录成功
-            session.setAttribute("message","输入有误或权限不够");
+            session.setAttribute("message","登录成功!");
 
             response.sendRedirect(request.getContextPath()+"/sys/index.jsp");
 

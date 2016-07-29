@@ -11,8 +11,13 @@ public interface IContactService {
     //录入联系人信息
     public boolean loggingContactMessage(Contact contact);
 
-    //修改联系人手机
-    public boolean updateContactPhone(Contact contact);
 
     public void getPageData(PageBean<Contact> pb);
+
+    public Contact findContactByPhone(String phone);
+
+    //修改通讯电话
+    public boolean changeContactPhone(String oldphone,String newphone);
+
+
 }

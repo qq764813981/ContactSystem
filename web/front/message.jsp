@@ -1,3 +1,6 @@
+<%@ page import="com.cxspace.bean.PageBean" %>
+<%@ page import="com.cxspace.entity.Contact" %>
+<%@ page import="com.cxspace.entity.Message" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -24,14 +27,13 @@
     <link href="${pageContext.request.contextPath}/front/css/lib/nivo-lightbox.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/front/css/lib/nivo-themes/default/default.css" rel="stylesheet">
 
-
-    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=QXwuA2Zi8h3huVQvqVrW2MhU"></script>
-	
     <!--Template Styles-->
     <link href="${pageContext.request.contextPath}/front/css/style.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/front/css/scheme/purple.css" rel="stylesheet">
 
     <!--[if lt IE 9]>
+
+    <!--
       <script src="/front/js/html5shiv.js"></script>
       <script src="/front/js/respond.min.js"></script>
     <![endif]-->
@@ -88,12 +90,12 @@
                     </div>
                 </div>
 
-                <form id="contactform1" role="form">
+                <form id="contactform1" role="form" method="post" action="${pageContext.request.contextPath}/AddMessageServlet">
                 <div class="row">
 
                     <div class="col-md-12">
                         <div class="form-group">
-                            <textarea class="form-control" id="s_message" rows="10" placeholder="说点什么吧..."></textarea>
+                            <textarea class="form-control" id="s_message" rows="10" placeholder="说点什么吧..." name="content"></textarea>
                         </div>
                     </div>
 
@@ -112,7 +114,18 @@
                             <button type="submit" class="btn">提交留言</button>
                         </div>
 
+                        <%
+                           if(request.getAttribute("message")!=null)
+                           {
+                        %>
+
+                        <h5 style="text-align: right"><%=request.getAttribute("message")%></h5>
+
+                        <%
+                            }
+                        %>
                     </div>
+
 
                 </form>
 
@@ -128,20 +141,30 @@
                 <div class="row">
 
 
-                    <article class="col-md-4 col-sm-6">
-                        <figure class="blog-thumb">
-                            <img src="${pageContext.request.contextPath}/front/images/blog/blog-1.jpg" alt="blog-thumb">
-                        </figure>
-                        <div class="post-area">
-                            <a class="post-cat" href="">
-                            <h4>留言人姓名1</h4>
-                            </a>
-                            <a class="post-title" href="blog-post.html">
-                                <h3>时间1</h3>
-                            </a>
-                            <p class="post-content"> 一曲高歌和着蝉鸣而落，一段道路并着泪水而尽，一对书桌迎着热浪而离，一段故事却不会随着分别而终。未来无绝期，务必常联系。</p>                            
-                        </div>
-                    </article>
+                    <c:choose>
+
+                        <c:when test="${not empty requestScope.pageBean.pageData}">
+
+                            <c:forEach var="message" items="${requestScope.pageBean.pageData}">
+                                <article class="col-md-3 col-sm-6">
+                                     <div class="post-area">
+                                        <a class="post-cat" href="">
+                                        <h1>${message.name}</h1>
+                                        </a>
+                                        <a class="post-title" href="#">
+                                            <h5>${message.write_time}</h5>
+                                        </a>
+                                        <p class="post-content">${message.content}</p>
+                                    </div>
+                                </article>
+
+                            </c:forEach>
+                        </c:when>
+
+                        <c:otherwise>
+                            <h1>没有查到数据!</h1>
+                        </c:otherwise>
+                    </c:choose>
 
 
                 </div>
@@ -149,18 +172,23 @@
                     <div class="col-md-12 text-center">
 
                         <ul class="pagination">
-                            <li><a href="#">&laquo;</a></li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#">6</a></li>
-                            <li><a href="#">7</a></li>
-                            <li><a href="#">8</a></li>
-                            <li><a href="#">9</a></li>
-                            <li><a href="#">10</a></li>
-                            <li><a href="#">&raquo;</a></li>
+                            <li><a href="${pageContext.request.contextPath}/PageMessageServlet?currentPage=${requestScope.pageBean.currentPage-1}">&laquo;</a></li>
+
+                            <%
+                                PageBean<Message> messagePageBean = (PageBean<Message>) request.getAttribute("pageBean");
+
+                                for (int i = 0 ; i < messagePageBean.getTotalPage(); i++)
+                                {
+                                    if ((i+1)!=messagePageBean.getCurrentPage())
+                                    {
+
+                                   %>
+                                    <li><a href="${pageContext.request.contextPath}/PageMessageServlet?currentPage=<%=i+1%>"><%=i+1%></a></li>
+                                   <%
+                                    }
+                                }
+                               %>
+                             <li><a href="${pageContext.request.contextPath}/PageMessageServlet?currentPage=${requestScope.pageBean.currentPage+1}">&raquo;</a></li>
                         </ul><br>
 
                         <!--
@@ -221,13 +249,4 @@
 
 </html>
 
-<script type="text/javascript">
 
-    // 百度地图API功能
-    var map = new BMap.Map("allmap");
-
-    map.centerAndZoom(new BMap.Point(113.331398,39.897445),5);
-
-    map.enableScrollWheelZoom(true);
-
-</script>

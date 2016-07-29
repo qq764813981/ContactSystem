@@ -34,15 +34,13 @@ public class TestContactDao {
 
 
 
-    public void testupdateContactMessage(){
+    @Test
 
-        Contact contact = new Contact();
+    public void testupdateContactMessage(){
 
         ContactDao contactDao = new ContactDao();
 
-        contact.setPhone("0987654321");
-
-        contactDao.updateContactMessage(contact);
+        contactDao.updateContactMessage("0987654321","1234567890");
 
     }
 
@@ -54,7 +52,6 @@ public class TestContactDao {
         System.out.println(contactDao.findAllContact());
     }
 
-    @Test
 
     public void testfindAllCount(){
 
