@@ -143,4 +143,41 @@ public class UserDao implements IUserDao {
 
         return flag;
     }
+
+    @Override
+    public boolean updateUserPassword(String newPassword, String userPhone) {
+
+        boolean flag = true;
+
+        Session session = null;
+
+        Transaction tx = null;
+
+
+        try{
+            session = HibernateUtils.getSession();
+
+            tx = session.beginTransaction();
+
+            Query query = session.createQuery("update User user set user.password = ? where user.phone=?");
+
+            query.setParameter(0,newPassword);
+
+            query.setParameter(1,userPhone);
+
+            query.executeUpdate();
+
+        }catch (Exception e){
+
+            flag = false;
+
+            throw new RuntimeException(e);
+        }finally {
+
+            tx.commit();
+            session.close();
+        }
+
+        return flag;
+    }
 }

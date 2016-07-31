@@ -32,7 +32,6 @@ public class ContactDao implements IContactDao{
 
             session.save(contact);
 
-
             tx.commit();
 
         }catch (Exception e){
@@ -134,7 +133,7 @@ public class ContactDao implements IContactDao{
             session = HibernateUtils.getSession();
             tx = session.beginTransaction();
 
-            Query q = session.createQuery("from Contact");
+            Query q = session.createQuery("from Contact order by name desc ");
 
             q.setFirstResult(index);
 

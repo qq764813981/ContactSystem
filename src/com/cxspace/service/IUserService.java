@@ -21,4 +21,7 @@ public interface IUserService {
     public User findUserByPhone(String phone);
 
     public boolean deleteUserById(String id);
+
+    public boolean updateUserPassword(String newPassword,String userPhone);
+
 }

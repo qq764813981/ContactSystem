@@ -1,5 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
+<%
+    if(session.getAttribute("loginAdmin")==null)
+    {
+        response.sendRedirect(request.getContextPath()+"/sys/login.jsp");
+    }
+%>
+
 <!DOCTYPE html>
 <html>
 
@@ -224,7 +231,7 @@
                 <ul style="margin-right:0;" class="nav navbar-nav navbar-right">
                     <li>
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <img alt="" class="admin-pic img-circle" src="http://api.randomuser.me/portraits/thumb/men/10.jpg">欢迎您!管理员用户. <b class="caret"></b>
+                            <img alt="" class="admin-pic img-circle" src="${pageContext.request.contextPath}/sys/assets/img/logo.jpg">欢迎您!管理员用户. <b class="caret"></b>
                         </a>
                         <ul style="margin-top:14px;" role="menu" class="dropdown-setting dropdown-menu">
                             <li>
@@ -1045,13 +1052,24 @@
     // 百度地图API功能
     var map = new BMap.Map("allmap");
     map.enableScrollWheelZoom(true);
-
-    var point = new BMap.Point(116.400244,39.92556);
+    var point = new BMap.Point(116.400244,34.92556);
     map.centerAndZoom(point, 5);
-    var marker = new BMap.Marker(point);  // 创建标注
-    map.addOverlay(marker);              // 将标注添加到地图中
-    var label = new BMap.Label("我是文字标注哦",{offset:new BMap.Size(20,-10)});
-    marker.setLabel(label);
+
+
+    //一个点
+    var point1 = new BMap.Point(115.809785,28.661275);
+    var marker1 = new BMap.Marker(point1);  // 创建标注
+    map.addOverlay(marker1);              // 将标注添加到地图中
+    var label1 = new BMap.Label("南昌大学",{offset:new BMap.Size(20,-10)});
+    marker1.setLabel(label1);
+
+    //一个点
+    var point2 = new BMap.Point(116.560530,39.918329);
+    var marker2 = new BMap.Marker(point2);  // 创建标注
+    map.addOverlay(marker2);              // 将标注添加到地图中
+    var label2 = new BMap.Label("中国传媒大学",{offset:new BMap.Size(20,-10)});
+    marker2.setLabel(label2);
+
 
 </script>
 

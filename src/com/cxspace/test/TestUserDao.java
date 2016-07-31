@@ -11,25 +11,30 @@ import org.junit.Test;
  */
 public class TestUserDao {
 
-
-
     public void Testsave(){
         User user = new User();
-
         user.setId(WebUtils.getRandomId(10));
         user.setPhone("13037239782");
         user.setPassword("13037239782");
-        user.setType(0);
-
+        user.setType(1);
         UserDao userDao = new UserDao();
-
         userDao.save(user);
-
     }
 
 
 
     @Test
+
+    public void updatePassword(){
+
+        UserDao userDao = new UserDao();
+        System.out.println(userDao.updateUserPassword("2","1"));
+
+    }
+
+
+
+
     public void testDelete(){
 
         UserDao userDao = new UserDao();

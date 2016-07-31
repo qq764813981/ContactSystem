@@ -23,6 +23,8 @@ public class DeleteMessageServlet extends HttpServlet {
 
             response.sendRedirect(request.getContextPath()+"/sys/message.jsp");
         }else {
+
+            response.sendRedirect(request.getContextPath()+"/sys/404.jsp");
             //处理错误页面
         }
     }

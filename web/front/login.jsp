@@ -56,7 +56,7 @@
                             <div class="form-group">
                                 <!--a href="#" class="pull-right label-forgot">Forgot email?</a-->
                                 <label for="inputUsernameEmail">用户名</label>
-                                <input type="text" id="inputUsernameEmail" name="phone" class="form-control">
+                                <input type="number" id="inputUsernameEmail" name="phone" class="form-control">
                             </div>
                             <div class="form-group">
                                 <!--a href="#" class="pull-right label-forgot">Forgot password?</a-->

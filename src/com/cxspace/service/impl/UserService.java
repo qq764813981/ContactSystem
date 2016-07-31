@@ -77,4 +77,11 @@ public class UserService implements IUserService{
         UserDao userDao = new UserDao();
         return userDao.deleteUser(id);
     }
+
+    @Override
+    public boolean updateUserPassword(String newPassword, String userPhone) {
+
+        UserDao userDao = new UserDao();
+        return userDao.updateUserPassword(newPassword,userPhone);
+    }
 }

@@ -21,4 +21,8 @@ public interface IUserDao {
 
     public boolean deleteUser(String id);
 
+    //修改登录密码
+    public boolean updateUserPassword(String newPassword,String userPhone);
+
+
 }

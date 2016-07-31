@@ -21,7 +21,15 @@ public class PageContactServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
 
+        HttpSession session = request.getSession();
+
         System.out.println("ok");
+
+        if(session.getAttribute("loginUser")==null)
+        {
+            response.sendRedirect(request.getContextPath()+"/front/login.jsp");
+        }
+
 
         try {
             ContactService contactService = new ContactService();
@@ -55,6 +63,8 @@ public class PageContactServlet extends HttpServlet {
 
 
         }catch (Exception e){
+
+            response.sendRedirect(request.getContextPath()+"/front/404.jsp");
             throw new RuntimeException(e);
         }
     }

@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Apricot v1.2</title>
+    <title>错误页</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -16,16 +16,13 @@
     }
     </style>
     <!-- Le styles -->
-    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/front/assets/js/jquery.min.js"></script>
 
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/loader-style.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.css">
-    <link rel="stylesheet" href="assets/css/signin.css">
-    <link rel="stylesheet" href="assets/css/extra-pages.css">
-
-
-
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/front/assets/css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/front/assets/css/loader-style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/front/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/front/assets/css/signin.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/front/assets/css/extra-pages.css">
 
 
 
@@ -34,10 +31,10 @@
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
     <!-- Fav and touch icons -->
-    <link rel="shortcut icon" href="assets/ico/minus.png">
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/front/assets/ico/minus.png">
 </head>
 
-<body><div id="awwwards" class="right black"><a href="http://www.awwwards.com/best-websites/apricot-navigation-admin-dashboard-template" target="_blank">best websites of the world</a></div>
+<body><div id="awwwards" class="right black"><a href="#" target="_blank"></a></div>
     <!-- Preloader -->
     <div id="preloader">
         <div id="status">&nbsp;</div>
@@ -45,8 +42,8 @@
 
 
     <div class="logo-error">
-        <h1>Apricot
-            <span>v1.0</span>
+        <h1>
+
         </h1>
     </div>
 
@@ -54,15 +51,13 @@
     <section class="page-error">
 
         <div class="error-page">
-            <h2 class="headline text-info">404</h2>
+            <h2 class="headline text-info">系统出现异常!</h2>
             <div class="error-content">
-                <h3><i class="fa fa-warning text-yellow"></i> Oops! Page not found.</h3>
+                <h3><i class="fa fa-warning text-yellow"></i> 不好意思,系统出现异常!</h3>
                 <p>
-                    We could not find the page you were looking for. Meanwhile, you may <a class="error-link" href='index.jsp'>return to dashboard</a> or try using the search form.
+                    可能是服务器不稳定导致. <a class="error-link" href='${pageContext.request.contextPath}/sys/login.jsp'>返回登录页</a>
+                    请与运维管理员取得联系QQ:442961832.
                 </p>
-                <form class='search-form'>
-                    <input type="text" name="search" class='form-control' placeholder="Search">
-                </form>
             </div>
             <!-- /.error-content -->
         </div>
@@ -83,11 +78,11 @@
 
 
     <!-- MAIN EFFECT -->
-    <script type="text/javascript" src="assets/js/preloader.js"></script>
-    <script type="text/javascript" src="assets/js/bootstrap.js"></script>
-    <script type="text/javascript" src="assets/js/app.js"></script>
-    <script type="text/javascript" src="assets/js/load.js"></script>
-    <script type="text/javascript" src="assets/js/main.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/front/assets/js/preloader.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/front/assets/js/bootstrap.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/front/assets/js/app.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/front/assets/js/load.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/front/assets/js/main.js"></script>
 
 
 </body>

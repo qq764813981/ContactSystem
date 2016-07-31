@@ -1,6 +1,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
+<%
+    if(session.getAttribute("loginUser")==null)
+    {
+        response.sendRedirect(request.getContextPath()+"/front/login.jsp");
+    }
+%>
+
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
@@ -29,7 +36,7 @@
     <link href="${pageContext.request.contextPath}/front/css/lib/nivo-themes/default/default.css" rel="stylesheet">
 
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=QXwuA2Zi8h3huVQvqVrW2MhU"></script>
-	
+
     <!--Template Styles-->
     <link href="${pageContext.request.contextPath}/front/css/style.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/front/css/scheme/purple.css" rel="stylesheet">
@@ -67,32 +74,31 @@
                     </a>
                 </div>
 
-                <%
-                    if(session.getAttribute("loginUser")!=null)
-                    {
-                %>
-                <h5 style="text-align: center">当前帐号</h5>
-                <h5 style="text-align: center"><%=session.getAttribute("loginUser")%>
 
-                    </h5>
-                <%
-                    }
-                %>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-navbar-collapse">
                     <ul class="nav navbar-nav">
 
+                        <%
+                            if(session.getAttribute("loginUser")!=null)
+                            {
+                        %>
+                        <h5 style="text-align: center">当前帐号</h5>
+                        <h5 style="text-align: center"><%=session.getAttribute("loginUser")%>
+
+                        </h5>
+                        <%
+                            }
+                        %>
 
                         <li><a   href="${pageContext.request.contextPath}/ExitLoginServlet">退出登录</a></li>
 
-                        <li class="active"><a  class="sscroll" href="${pageContext.request.contextPath}/front/index.jsp#home">主页</a></li>
+                        <li class="active"><a  class="sscroll" href="${pageContext.request.contextPath}/front/index.jsp#home">返回顶部</a></li>
 						
-						<!--
-						
-                        <li><a class="sscroll" href="index.jsp#services">Services</a></li>
-						
-						-->
+
+                        <li><a  href="${pageContext.request.contextPath}/front/changePassword.jsp">修改登录密码</a></li>
+
 						
                         <li><a class="sscroll" href="${pageContext.request.contextPath}/front/index.jsp#portfolio">照片墙</a></li>
 						
@@ -100,7 +106,7 @@
                         <li><a  href="${pageContext.request.contextPath}/PageContactServlet">通讯录</a></li>
 
 
-                        <li><a class="sscroll" href="${pageContext.request.contextPath}/front/index.jsp#testimonial">修改通讯信息</a></li>
+                        <li><a href="${pageContext.request.contextPath}/front/changePhone.jsp">修改通讯信息</a></li>
 
 						
                         <li><a class="sscroll" href="${pageContext.request.contextPath}/front/index.jsp#clients">通讯地图</a></li>
@@ -139,7 +145,7 @@
                                 <br/>
                             </div>
                           <div class="slide-filter"></div>
-                            <img src="${pageContext.request.contextPath}/front/images/slider/slide-1.jpg" class="par" alt="first">
+                            <img src="#" class="par" alt="first">
                         </li>
                         <li>
                             <div class="slide-text">
@@ -148,7 +154,7 @@
                                 <br/>
                             </div>
                           <div class="slide-filter"></div>
-                            <img src="${pageContext.request.contextPath}/front/images/slider/slide-2.jpg" class="par" alt="first">
+                            <img src="#" class="par" alt="first">
                         </li>
                         <li>
                             <div class="slide-text">
@@ -157,7 +163,7 @@
                                 <br/>
                             </div>
                           <div class="slide-filter"></div>
-                            <img src="${pageContext.request.contextPath}/front/images/slider/slide-3.jpg" class="par" alt="first">
+                            <img src="#" class="par" alt="first">
                         </li>
                     </ul>
                     <nav class="slides-navigation slidez">
@@ -173,83 +179,7 @@
             </section>
             <!-- END HOME -->
             
-            <!-- BEGIN SERVICES -->
-			
-			<!--
-            <section id="services" class="services">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="header-content">
-                            <h2>Services</h2>
-                            <h3>This is what we are good at</h3>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-md-4 col-sm-6 col-xs-12">
-                                <div class="service">
-                                    <div class="icon-holder">
-                                        <i class="fa fa-paper-plane"></i>
-                                    </div>
-                                    <h3 class="heading">Web Design</h3>
-                                    <p class="description">A elementum ligula lacus ac quam ultrices a scelerisque praesent vel suspendisse scelerisque a aenean hac montes.</p>
-				</div>
-                            </div>
-                            <div class="col-md-4 col-sm-6 col-xs-12">
-                                <div class="service">
-                                    <div class="icon-holder">
-                                        <i class="fa fa-diamond"></i>
-                                    </div>
-                                    <h3 class="heading">Web Programming</h3>
-                                    <p class="description">A elementum ligula lacus ac quam ultrices a scelerisque praesent vel suspendisse scelerisque a aenean hac montes.</p>
-				</div>
-                            </div>
-                            <div class="col-md-4 col-sm-6 col-xs-12">
-                                <div class="service">
-                                    <div class="icon-holder">
-                                        <i class="fa fa-camera"></i>
-                                    </div>
-                                    <h3 class="heading">Branding</h3>
-                                    <p class="description">A elementum ligula lacus ac quam ultrices a scelerisque praesent vel suspendisse scelerisque a aenean hac montes.</p>
-				</div>
-                            </div>
-                            <div class="col-md-4 col-sm-6 col-xs-12">
-                                <div class="service">
-                                    <div class="icon-holder">
-                                        <i class="fa fa-heartbeat"></i>
-                                    </div>
-                                    <h3 class="heading">Consultation</h3>
-                                    <p class="description">A elementum ligula lacus ac quam ultrices a scelerisque praesent vel suspendisse scelerisque a aenean hac montes.</p>
-				</div>
-                            </div>
-                            <div class="col-md-4 col-sm-6 col-xs-12">
-                                <div class="service">
-                                    <div class="icon-holder">
-                                        <i class="fa fa-life-ring"></i>
-                                    </div>
-                                    <h3 class="heading">Technical Writing</h3>
-                                    <p class="description">A elementum ligula lacus ac quam ultrices a scelerisque praesent vel suspendisse scelerisque a aenean hac montes.</p>
-				</div>
-                            </div>
-                            <div class="col-md-4 col-sm-6 col-xs-12">
-                                <div class="service">
-                                    <div class="icon-holder">
-                                        <i class="fa fa-rocket"></i>
-                                    </div>
-                                    <h3 class="heading">Bug Hunt</h3>
-                                    <p class="description">A elementum ligula lacus ac quam ultrices a scelerisque praesent vel suspendisse scelerisque a aenean hac montes.</p>
-				</div>
-                            </div>
-                        </div>
-                    </div>                   
-                </div>
-            </section>
-			
-			
-			-->
-			
-            <!-- END SERVICES -->
-     
+
             <!-- BEGIN PORTFOLIO -->
             <section id="portfolio" class="portfolio gray">
                 <div class="row">
@@ -332,83 +262,17 @@
             <!-- END PORTFOLIO -->
 
 
-            <!-- BEGIN TESTIMONIAL -->
-
-
-
-            <section id="testimonial" class="testimonial">
-
-                <div class="row">
-                    <div class="col-md-12 mg-bt-80">
-                        <div class="header-content">
-                            <h2>修改通讯信息</h2>
-                            <h3>发送新的手机号给后台修改</h3>
-                        </div>
-                    </div>
-
-                    <form id="contactform" role="form" method="post" action="${pageContext.request.contextPath}/updateContactPhoneServlet">
-                        <div class="col-md-3">
-
-                        </div>
-
-                        <div class="col-md-4">
-
-                            <div class="form-group">
-                                <input type="number" class="form-control" id="name" placeholder="请输入新的手机号" name="newPhone">
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-3">
-
-                            <button type="submit" class="btn">确定修改</button>
-
-                        </div>
-
-                        <div class="col-md-2">
-
-                        </div>
-
-
-                    </form>
-
-
-                </div>
-
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-
-
-            </section>
-
-
-            <!-- END TESTIMONIAL -->
-
-
             <!-- BEGIN CLIENTS -->
 			
 
             <section id="clients" class="clients">
                 <div class="row">
-                    <div class="col-md-12 mg-bt-80">
-                        <div class="header-content">
-                            <h2>通讯地图</h2>
-                            <h5>滚动拖拽鼠标操作地图</h5>
-                        </div>
-                    </div>                    
                     <div class="col-lg-12">
-                        <div class="row mg-bt-60">
+                        <div class="row mg-bt-90">
                             <div class="col-md-12">
 
 
-                                <div id="allmap" style="height:580px;width: 100%"></div>
+                                <div id="allmap" style="height:500px;width: 100%"></div>
 
 
                             </div>
@@ -474,9 +338,9 @@
                             
 							<h2>我们的办公室</h2>
                             <ul class="office">
-                                <li><i class="fa fa-map-marker"></i> <strong>Address:</strong> 江西-南昌市-南昌大学-窗星工作室</li>
-                                <li><i class="fa fa-phone"></i> <strong>Phone:</strong> 8888-8888</li>
-                                <li><i class="fa fa-envelope"></i> <strong>Email:</strong> <a href="mailto:mail@example.com">000000000@aliyun.com</a></li>
+                                <li><i class="fa fa-map-marker"></i> <strong>Address:</strong> 江西-南昌市-南昌大学-护理专家工作室</li>
+                                <li><i class="fa fa-phone"></i> <strong>Phone:</strong> 13037239781</li>
+                                <li><i class="fa fa-envelope"></i> <strong>Email:</strong> <a href="mailto:mail@example.com">442961832@qq.com</a></li>
                             </ul>
                         </div>
                     </div>
@@ -553,9 +417,23 @@
 
     // 百度地图API功能
     var map = new BMap.Map("allmap");
-
-    map.centerAndZoom(new BMap.Point(113.331398,39.897445),5);
-
     map.enableScrollWheelZoom(true);
+    var point = new BMap.Point(116.400244,34.92556);
+    map.centerAndZoom(point, 5);
+
+
+    //一个点
+    var point1 = new BMap.Point(115.809785,28.661275);
+    var marker1 = new BMap.Marker(point1);  // 创建标注
+    map.addOverlay(marker1);              // 将标注添加到地图中
+    var label1 = new BMap.Label("南昌大学",{offset:new BMap.Size(20,-10)});
+    marker1.setLabel(label1);
+
+    //一个点
+    var point2 = new BMap.Point(116.560530,39.918329);
+    var marker2 = new BMap.Marker(point2);  // 创建标注
+    map.addOverlay(marker2);              // 将标注添加到地图中
+    var label2 = new BMap.Label("中国传媒大学",{offset:new BMap.Size(20,-10)});
+    marker2.setLabel(label2);
 
 </script>

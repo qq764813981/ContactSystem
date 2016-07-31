@@ -3,6 +3,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
+<%
+    if(session.getAttribute("loginUser")==null)
+    {
+        response.sendRedirect(request.getContextPath()+"/front/login.jsp");
+    }
+%>
+
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
@@ -65,6 +72,18 @@
                 <div class="collapse navbar-collapse" id="bs-navbar-collapse">
                     <ul class="nav navbar-nav">
 
+                        <%
+                            if(session.getAttribute("loginUser")!=null)
+                            {
+                        %>
+                        <h5 style="text-align: center">当前帐号</h5>
+                        <h5 style="text-align: center"><%=session.getAttribute("loginUser")%>
+
+                        </h5>
+                        <%
+                            }
+                        %>
+
                         <li class="active"><a  href="${pageContext.request.contextPath}/ReturnIndexServlet">返回主页</a></li>
 						
 						<!--
@@ -108,8 +127,8 @@
 			   <div class="row">
                     <div class="col-md-12 mg-bt-80">
                         <div class="header-content">
-                            <h2>通讯录</h2>
-                            <h5>距离再远，也不要忘了联系</h5>
+                            <br><br><br>
+                            <h3>距离再远，也不要忘了联系</h3>
                         </div>
                     </div>
                     <div class="col-lg-12">

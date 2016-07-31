@@ -1,4 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    if(session.getAttribute("loginAdmin")==null)
+    {
+        response.sendRedirect(request.getContextPath()+"/sys/login.jsp");
+    }
+%>
 
 <!DOCTYPE html>
 <html>
@@ -224,7 +230,7 @@
             <ul style="margin-right:0;" class="nav navbar-nav navbar-right">
                 <li>
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                        <img alt="" class="admin-pic img-circle" src="http://api.randomuser.me/portraits/thumb/men/10.jpg">欢迎您!管理员用户. <b class="caret"></b>
+                        <img alt="" class="admin-pic img-circle" src="${pageContext.request.contextPath}/sys/assets/img/logo.jpg">欢迎您!管理员用户. <b class="caret"></b>
                     </a>
                     <ul style="margin-top:14px;" role="menu" class="dropdown-setting dropdown-menu">
                         <li>
@@ -737,7 +743,7 @@
                             <input type="number" placeholder="输入联系电话" id="exampleInputPassword4" class="form-control" name="phone">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputFile">选择一张小于<font>1M</font>的照片</label>
+                            <label for="exampleInputFile">选择一张小于<font>0.5M</font>的照片</label>
                             <input type="file" id="exampleInputFile" name="file">
                             <p class="help-block">提交一张联系人的头像</p>
                         </div>

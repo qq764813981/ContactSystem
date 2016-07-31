@@ -71,7 +71,7 @@ public class AddContactMessageServlet extends HttpServlet {
 
         ContactService contactService = new ContactService();
 
-        if (!flag)
+        if (!flag&&(request.getParameter("file")!=null))
         {
         if (contactService.loggingContactMessage(contact)){
 
@@ -89,7 +89,7 @@ public class AddContactMessageServlet extends HttpServlet {
             //录入失败
         }
         }else {
-            session.setAttribute("loggingMes","录入失败，请重新录入!!!");
+            session.setAttribute("loggingMes","信息输入不完整，请重新录入!!!");
             response.sendRedirect(request.getContextPath()+"/sys/contactmsg.jsp");
         }
 

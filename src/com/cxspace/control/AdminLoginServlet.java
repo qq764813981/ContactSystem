@@ -28,6 +28,8 @@ public class AdminLoginServlet extends HttpServlet {
             //登录成功
             session.setAttribute("message","登录成功!");
 
+            session.setAttribute("loginAdmin","OK");
+
             response.sendRedirect(request.getContextPath()+"/sys/index.jsp");
 
          //   request.getRequestDispatcher("/sys/index.jsp").forward(request,response);

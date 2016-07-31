@@ -136,9 +136,6 @@
         </div>
 
     </div>
-    <div id="test1" class="gmap3"></div>
-
-
 
     <!--  END OF PAPER WRAP -->
 

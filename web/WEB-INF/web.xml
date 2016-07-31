@@ -145,5 +145,25 @@
         <servlet-name>AdminLoginOutServlet</servlet-name>
         <url-pattern>/AdminLoginOutServlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddAdminServlet</servlet-name>
+        <servlet-class>com.cxspace.control.AddAdminServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AddAdminServlet</servlet-name>
+        <url-pattern>/AddAdminServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>updateUserPasswordServlet</servlet-name>
+        <servlet-class>com.cxspace.control.updateUserPasswordServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>updateUserPasswordServlet</servlet-name>
+        <url-pattern>/updateUserPasswordServlet</url-pattern>
+    </servlet-mapping>
     
 </web-app>

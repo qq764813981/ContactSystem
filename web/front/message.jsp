@@ -1,8 +1,13 @@
 <%@ page import="com.cxspace.bean.PageBean" %>
-<%@ page import="com.cxspace.entity.Contact" %>
 <%@ page import="com.cxspace.entity.Message" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    if(session.getAttribute("loginUser")==null)
+    {
+        response.sendRedirect(request.getContextPath()+"/front/login.jsp");
+    }
+%>
 
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
@@ -66,6 +71,18 @@
                 <div class="collapse navbar-collapse" id="bs-navbar-collapse">
                     <ul class="nav navbar-nav">
 
+                        <%
+                            if(session.getAttribute("loginUser")!=null)
+                            {
+                        %>
+                        <h5 style="text-align: center">当前帐号</h5>
+                        <h5 style="text-align: center"><%=session.getAttribute("loginUser")%>
+
+                        </h5>
+                        <%
+                            }
+                        %>
+
                         <li class="active"><a href="${pageContext.request.contextPath}/ReturnIndexServlet">返回主页</a></li>
 
                     </ul>
@@ -82,8 +99,8 @@
                 <div class="row">
                     <div class="col-md-12 mg-bt-70">
                         <div class="header-content">
-                            <h2>留言板</h2>
-                            <h5>有一些话，直到告别后，也遗憾的没有说出来</h5>
+                            <br><br><br>
+                            <h3>有一些话，直到告别后，也遗憾的没有说出来</h3>
                         </div>
                     </div>
                 </div>

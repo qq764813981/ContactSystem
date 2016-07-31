@@ -42,6 +42,10 @@ public class AddSuggestServlet extends HttpServlet {
             request.setAttribute("suggestMessage","发送建议成功!");
             request.getRequestDispatcher("/front/index.jsp").forward(request,response);
         }else {
+
+            request.setAttribute("suggestMessage","发送建议失败!");
+            request.getRequestDispatcher("/front/index.jsp").forward(request,response);
+
             //发送失败
         }
     }
