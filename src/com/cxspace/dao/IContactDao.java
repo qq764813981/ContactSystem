@@ -18,6 +18,7 @@ public interface IContactDao {
     //修改通讯电话
     public boolean updateContactMessage(String oldphone,String newphone);
 
+    public boolean updateContactPic(String url , String phone);
     //展示所有联系人信息
     public List<Contact> findAllContact();
 

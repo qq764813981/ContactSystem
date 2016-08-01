@@ -2,6 +2,8 @@ package com.cxspace.test;
 
 import com.cxspace.dao.impl.ContactDao;
 import com.cxspace.entity.Contact;
+import com.cxspace.service.impl.ContactService;
+import com.cxspace.service.impl.UserService;
 import com.cxspace.utils.WebUtils;
 import org.hibernate.Session;
 import org.junit.Test;
@@ -34,7 +36,7 @@ public class TestContactDao {
 
 
 
-    @Test
+
 
     public void testupdateContactMessage(){
 
@@ -56,6 +58,15 @@ public class TestContactDao {
     public void testfindAllCount(){
 
         System.out.println(new ContactDao().getTotalCount());
+
+    }
+
+    @Test
+    public void updatePicUrl(){
+
+        ContactService contactService = new ContactService();
+
+        System.out.println(contactService.changeContactPic("/user/tomcat","13037239781"));
 
     }
 }

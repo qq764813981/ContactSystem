@@ -40,4 +40,10 @@ public class ContactService implements IContactService{
         ContactDao contactDao = new ContactDao();
         return contactDao.updateContactMessage(oldphone,newphone);
     }
+
+    @Override
+    public boolean changeContactPic(String picurl, String phone) {
+        ContactDao contactDao = new ContactDao();
+        return contactDao.updateContactPic(picurl, phone);
+    }
 }

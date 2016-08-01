@@ -19,5 +19,7 @@ public interface IContactService {
     //修改通讯电话
     public boolean changeContactPhone(String oldphone,String newphone);
 
+    public boolean changeContactPic(String picurl , String phone);
+
 
 }

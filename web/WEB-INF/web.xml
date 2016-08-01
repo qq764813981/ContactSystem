@@ -166,4 +166,15 @@
         <url-pattern>/updateUserPasswordServlet</url-pattern>
     </servlet-mapping>
     
+    
+    <servlet>
+        <servlet-name>updateContactPicServlet</servlet-name>
+        <servlet-class>com.cxspace.control.updateContactPicServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>updateContactPicServlet</servlet-name>
+        <url-pattern>/updateContactPicServlet</url-pattern>
+    </servlet-mapping>
+    
 </web-app>

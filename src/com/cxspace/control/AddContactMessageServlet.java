@@ -71,7 +71,7 @@ public class AddContactMessageServlet extends HttpServlet {
 
         ContactService contactService = new ContactService();
 
-        if (!flag&&(request.getParameter("file")!=null))
+        if (!flag)
         {
         if (contactService.loggingContactMessage(contact)){
 

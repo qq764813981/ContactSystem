@@ -82,6 +82,42 @@ public class ContactDao implements IContactDao{
     }
 
     @Override
+    public boolean updateContactPic(String url, String phone) {
+
+        boolean flag = true;
+
+        Session session = null;
+        Transaction tx = null;
+
+        try{
+            session = HibernateUtils.getSession();
+
+            tx = session.beginTransaction();
+
+            Query query = session.createQuery("update Contact contact set contact.pic = ? where contact.phone=?");
+
+            query.setParameter(0,url);
+
+            query.setParameter(1,phone);
+
+            query.executeUpdate();
+
+        }catch (Exception e){
+
+            flag = false;
+
+            throw new RuntimeException(e);
+        }finally {
+
+            tx.commit();
+            session.close();
+        }
+
+        return flag;
+    }
+
+
+    @Override
     public List<Contact> findAllContact() {
 
         Session session = null;
